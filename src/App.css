@@ -1,0 +1,135 @@
+body{
+  background: #effdf5;
+}
+
+
+
+.position-area{
+    inset-area: center;
+}
+
+
+.title-page1{
+    background-image: url(./assets/home3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    align-content: center;
+    text-align: center;
+    font-size: xxx-large;
+    font-weight: 800;
+}
+
+.title-page2{
+    background-image: url(./assets/home4.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    align-content: center;
+    text-align: center;
+    font-size: xxx-large;
+    font-weight: 800;
+}
+
+.title-page3{
+    background-image: url(./assets/home5.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    align-content: center;
+    text-align: center;
+    font-size: xxx-large;
+    font-weight: 800;
+}
+
+
+.headersection{
+    /* background: rgb(2,0,36);
+background: linear-gradient(rgba(2,0,36,1) 0%, rgba(0,33,0,1) 50%, rgb(0, 73, 0) 100%);
+color: white */
+color: #26a69a
+}
+
+
+
+.animate-typin{
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.275);
+}
+
+
+.fade-out-down {
+    animation: fade-out-down 2s ease infinite;
+  }
+  @keyframes fade-out-down {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  }
+
+  
+  .fade-in-down {
+    animation: fade-in-down 2s ease infinite;
+  }
+  @keyframes fade-in-down {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+
+
+
+  .about-img{
+    text-align: -webkit-center;
+}
+
+
+
+/* .about-img::after {
+  position: absolute;
+  content: "";
+  width: 255px;
+  height: 217px;
+  background-image: url(./assets/dots-yellow.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  -webkit-transform: translate(-40%, -40%);
+  -ms-transform: translate(-40%, -40%);
+  transform: translate(-40%, -40%);
+} */
+
+
+.property{
+/* box-shadow: 4px 6px 13px #00000029; */
+transition: all 0.5s;
+}
+
+.property:hover{
+  /* box-shadow: none; */
+  /* background:none; */
+}
+
+
+.features-icon{
+    text-align: -webkit-center;
+
+}
+
+
+#parent-div {
+  height: 400px;  /* Adjust as needed */
+  overflow-y: scroll;
+}
