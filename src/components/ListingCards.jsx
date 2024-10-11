@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import PropertyCard from "./PropertyCard";
 import Search from "./Search";
 import { BASE_URL } from '../Constats/Constats';
 import axios from 'axios';
-
 
 export default function ListingCards(){
 
