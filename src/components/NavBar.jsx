@@ -156,14 +156,14 @@ const [isScrolled,setIsScrolled] = useState(false)
   );
  
   return (
-    <Navbar className={`${isScrolled?'lg:mt-0 max-w-full lg:rounded-none':'max-w-screen-xl lg:mt-8 lg:rounded-2xl'} z-20 fixed position-area mx-auto  px-4 py-2 lg:px-8 lg:py-4 rounded-none transition-all`}>
+    <Navbar className={`${isScrolled?'lg:mt-0 max-w-full lg:rounded-none':'max-w-screen-xl lg:mt-8 lg:rounded-2xl'} z-20 fixed position-area mx-auto  px-4 lg:px-8 rounded-none transition-all`}>
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
         <Typography
           as="a"
           href="#"
-          className="mr-4 cursor-pointer py-1.5 font-medium"
+          className="mr-4 cursor-pointer font-medium"
         >
-          Material Tailwind
+          <img className="w-[4rem]" src="/src/assets/logo.png"></img>
         </Typography>
         <div className="hidden lg:block">{navList}</div>
         

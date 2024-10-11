@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PropertyCard from "./PropertyCard";
 import Search from "./Search";
 
-
 export default function ListingCards(){
     const [sampleArray,setSampleArray] = useState(['q','e','q','q','e','q'])
+
+    useEffect(()=>{
+      
+    },[])
     return (
         <div>
         <Search />
