@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 
-export default function PropertyCard(){
+export default function PropertyCard(props){
 
  const navigate = useNavigate()
 
@@ -10,7 +10,7 @@ export default function PropertyCard(){
         <div className="">
         <a href="javascript:void(0)">
   <div onClick={()=>
-    navigate('/property-details')
+    navigate(`/property-details/${props.id}`)
   } 
   class="relative flex flex-col my-6 bg-white property rounded-lg mx-3 shadow-xl hover:shadow-sm">
     <div class="relative overflow-hidden text-white rounded-t-md">
@@ -20,19 +20,22 @@ export default function PropertyCard(){
     
     <div className="flex justify-around">
     <div class="mb-4 font-bold py-0.5 px-2.5 border border-transparent text-lg text-[#000000] transition-all text-center">
-      ₹ 50 Lac
+    ₹{props.rate}
     </div>
     <div className="text-2xl text-[#00000042]">|</div>
     <div class="mb-4 font-bold py-0.5 px-2.5 border border-transparent text-lg text-[#000000] transition-all text-center">
-    1600 sqft
+    {props.area}
     </div>
+    </div>
+    <div class="mb-4 font-bold py-0.5 px-2.5 border border-transparent text-xl text-[#000000] transition-all">
+    {props.name}
     </div>
       <p class="text-slate-600 leading-normal text-[#0000009f] font-light mb-4">
-        vyttila eranakulam
+        {props.address}
       </p>
       
       <p class="text-slate-600 leading-normal text-[#ffffffe4] font-semibold text-xs bg-[#26A69A] w-fit px-2 py-1 rounded-full">
-      Ready to move
+      {props.status}
     </p>
     <button onClick={()=>
       navigate('/property-details')
