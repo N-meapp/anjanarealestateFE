@@ -135,7 +135,7 @@ console.log(singlePropertyData, "data fetchhhhh")
           </div>
           <div>
           <h1 className="text-[#00000071]">contact</h1>
-        <h1 className="text-[black] font-bold">{singlePropertyData.}</h1>
+        <h1 className="text-[black] font-bold">{singlePropertyData.contactNumber}</h1>
           </div>
           </div>
         </div>
