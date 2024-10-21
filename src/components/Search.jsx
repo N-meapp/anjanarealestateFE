@@ -7,7 +7,9 @@ export default function Search({ handleSearchChange, searchTerm }){
       class="w-full bg-[#ffffff27] placeholder:text-slate-400 text-black text-slate-700 text-sm border border-[#0055553d] rounded-full pl-3 pr-16 md:pr-28 py-4 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300"
       placeholder="Search here...." 
       value={searchTerm}
-      onChange={handleSearchChange}
+      onChange={(e)=>{
+        handleSearchChange(e)
+      }}
     />
     <button
       class="absolute top-2 right-2 flex items-center shadow-lg rounded-full bg-white py-2 px-2 border border-transparent text-center text-sm text-[#005555] transition-all hover:shadow focus:bg-slate-700  active:bg-slate-700 hover:bg-slate-700 disabled:pointer-events-none disabled:opacity-50"

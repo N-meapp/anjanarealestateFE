@@ -12,8 +12,9 @@ import AdminCategory from './components/Admin/AdminCategory'
 import Admin from './components/Admin/Admin'
 import Footer from './components/Footer'
 // import Dashboard from './components/admin/Dashboard'
-Dashboard
-
+import ListCategory from './components/ListCategory'
+import AboutPage from './components/AboutPage'
+import GalleryPage from './components/GalleryPage'
 
 
 
@@ -34,6 +35,9 @@ function App() {
     <Routes>
     <Route path='/admin' element={<Admin />}/>
       <Route path="/property-details/:p_id" element={<SingleProperty />}/>
+      <Route path="/all-category-list" element={<ListCategory />}/>
+      <Route path="/about-page" element={<AboutPage />}/>
+      <Route path="/gallery-page" element={<GalleryPage />}/>
       <Route path="/" element={<Home />}>
         </Route>
       </Routes>
