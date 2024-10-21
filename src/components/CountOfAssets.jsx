@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState,useRef } from "react"
 
 
 export default function CountOfAssets(){
@@ -30,6 +30,7 @@ export default function CountOfAssets(){
     };
 
 
+
     useEffect(() => {
         // Function to handle scroll event
         const handleScroll = () => {
@@ -38,11 +39,11 @@ export default function CountOfAssets(){
                 const scrollPosition = window.scrollY || window.pageYOffset;
 
                 // Get the top position of the target div
-                const divTop = targetDiv.getBoundingClientRect().top + scrollPosition-400;
+                const divTop = targetDiv.getBoundingClientRect().top + scrollPosition;
 
                 console.log('Scroll Position:', scrollPosition, 'Div Top:', divTop);
 
-                if (Math.floor(scrollPosition) === Math.floor(divTop)) {
+                if (Math.floor(scrollPosition) <= Math.floor(divTop)) {
                     handleCount()
                 } else {
                     console.log('Scrollbar position is NOT equal to the top position of the div.');
@@ -61,11 +62,20 @@ export default function CountOfAssets(){
 
 
 
+    const targetRef = useRef(null); // Reference to the target div
+  const [isVisible, setIsVisible] = useState(false); // State to track visibility
+
+
+
+
+
+
     return(
-         <div className=" flex gap-5 w-full justify-around mb-96">
+         <div id="scroll-div"
+         className=" flex gap-5 w-full justify-around mb-96 counter-div">
           <div className="text-center">
           <h1 className="text-4xl text-black font-extrabold">{countOne}</h1>
-          <h1 id="scroll-div" className="text-[#00000079] text-sm mt-3"># of Buy Properties</h1>
+          <h1 className="text-[#00000079] text-sm mt-3"># of Buy Properties</h1>
           </div>
           <div className="text-center">
           <h1 onClick={handleCount} className="text-4xl text-black font-extrabold">{countTwo}</h1>

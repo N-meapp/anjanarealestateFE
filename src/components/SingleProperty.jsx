@@ -18,7 +18,7 @@ export default function SingleProperty() {
 
   const getSingleProperty = async () => {
     try {
-      const response = await axios.get(`${BASE_URL}users/singleProperty`, { params: { propertyId: p_id } });
+      const response = await axios.get(`${BASE_URL}/users/singleProperty`, { params: { propertyId: p_id } });
 
       if (response.data && response.data.data) {
         setSinglePropertyData(response.data.data);

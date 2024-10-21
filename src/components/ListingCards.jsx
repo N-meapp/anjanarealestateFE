@@ -4,12 +4,13 @@ import Search from "./Search";
 import { BASE_URL } from '../Constats/Constats';
 import axios from 'axios';
 
-
 export default function ListingCards(){
 
     // const [sampleArray,setSampleArray] = useState(['q','e','q','q','e','q'])
 
     const [homeData, setHomeData]= useState([])
+    const [searchTerm, setSearchTerm] = useState({});
+    const [error,setError] = useState()
     // const [searchTerm, setSearchTerm] = useState({});
     const [searchTerm, setSearchTerm] = useState(""); 
     const [searchFechedData, setSearchFechedData] = useState([]);
@@ -24,10 +25,19 @@ export default function ListingCards(){
     const homePropertyData = async () => {
         try {
 
-            const response = await axios.get(`${BASE_URL}users/PropertyList`);
+            console.log(BASE_URL,'baseurll.....');
+            
+
+        const response = await axios.get(`${BASE_URL}/users/PropertyList`)
+
+        console.log(response);
+        
+            
             
            
             if (response.data && response.data.data) {
+                console.log(response.data.data,',..jllojoij...');
+                
                 setHomeData(response.data.data);
             } else {
                 console.error("Unexpected response format", response.data);
@@ -115,7 +125,7 @@ export default function ListingCards(){
             
         {homeData.map((property)=>{
             return(
-                <PropertyCard id={property._id} rate={property.rate} area={property.area} address={property.address} status={property.status} name={property.name} />
+                <PropertyCard id={property._id} rate={property.rate} area={property.area} address={property.address} status={property.status} name={property.name} contact={property.contactNumber} />
             )
         })}
         </div>
