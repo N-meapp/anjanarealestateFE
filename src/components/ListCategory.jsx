@@ -24,7 +24,10 @@ export default function ListCategory() {
 
     const getCategoryData = async () => {
         try {
-            const response = await axios.get(`${BASE_URL}admin/categoryList`);
+            const response = await axios.get(`${BASE_URL}/admin/categoryList`);
+
+            console.log(response,'responnnnnnseeeee');
+            
 
             if (response.data && response.data.data) {
                 const categoryNames = response.data.data.map(category => category.categoryName);
@@ -46,7 +49,7 @@ export default function ListCategory() {
     const propertyCategoryData = async () => {
         try {
             const promises = categoryData.map(category => {
-                return axios.get(`${BASE_URL}users/categoryPropertyList`, { params: { category } });
+                return axios.get(`${BASE_URL}/users/categoryPropertyList`, { params: { category } });
             });
 
             const responses = await Promise.all(promises);
@@ -65,7 +68,7 @@ export default function ListCategory() {
             setSearchTerm(e.target.value)
             const searchKey = e.target.value
    
-          const response = await axios.get(`${BASE_URL}users/search`, { params: { query: searchKey } });
+          const response = await axios.get(`${BASE_URL}/users/search`, { params: { query: searchKey } });
       
           console.log('Response:', response);
       

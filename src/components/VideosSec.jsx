@@ -44,7 +44,7 @@ export default function Videos() {
 
     try {
 
-      const response = await axios.get(`${BASE_URL}users/getVideoLink`)
+      const response = await axios.get(`${BASE_URL}/users/videoList`)
 
       if(response){
        setVedioLink(response.data)
@@ -63,7 +63,7 @@ export default function Videos() {
 
 
   return (
-    <>
+    <div>
       {/*<!-- Component: Carousel with indicators & controls inside --> */}
       <div className="glide-03 relative w-full mt-16 mb-24">
         {/*    <!-- Slides --> */}
@@ -191,6 +191,6 @@ export default function Videos() {
         </div>
       </div>
       {/*<!-- End Carousel with indicators & controls inside --> */}
-    </>
+    </div>
   )
 }

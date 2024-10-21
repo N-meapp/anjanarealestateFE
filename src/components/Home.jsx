@@ -19,8 +19,8 @@ export default function Home(){
         <Features />
         <div className='p-8'><Videos /></div>
         
-        <CountOfAssets />
         </div>
     )
+    // <CountOfAssets />
     // <Category />
 }

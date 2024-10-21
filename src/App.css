@@ -2,6 +2,10 @@ body{
   background: #effdf5;
 }
 
+element {
+  position: absolute;
+  inset: 10px 20px 30px 40px; /* Top, right, bottom, left */
+}
 
 
 .position-area{

@@ -9,7 +9,6 @@ export default function ListingCards(){
     // const [sampleArray,setSampleArray] = useState(['q','e','q','q','e','q'])
 
     const [homeData, setHomeData]= useState([])
-    const [searchTerm, setSearchTerm] = useState({});
     const [error,setError] = useState()
     // const [searchTerm, setSearchTerm] = useState({});
     const [searchTerm, setSearchTerm] = useState(""); 
@@ -17,7 +16,7 @@ export default function ListingCards(){
  
     useEffect(()=>{
 
-        homePropertyData()
+        homePropertyData() 
 
     },[])
 
@@ -58,7 +57,7 @@ export default function ListingCards(){
             setSearchTerm(e.target.value)
             const searchKey = e.target.value
    
-          const response = await axios.get(`${BASE_URL}users/search`, { params: { query: searchKey } });
+          const response = await axios.get(`${BASE_URL}/users/search`, { params: { query: searchKey } });
       
           console.log('Response:', response);
       
