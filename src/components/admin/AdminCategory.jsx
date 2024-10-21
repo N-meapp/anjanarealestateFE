@@ -10,10 +10,28 @@ export default function AdminCategory(){
     const BASE_URL = import.meta.env.VITE_BASE_URL;
     console.log(BASE_URL);
 
+    const [newcategory,setNewCategory] = useState()
     const [deleted,setDeleted] = useState()
+    const [isAddClicked,setIsAddClicked] = useState(false)
 
     const [table, setTable] = useState([]); 
 
+
+    const handleAdd=async()=>{
+      setIsAddClicked(true)
+      try{
+        const response =await axios.post(`${BASE_URL}/admin/addCategory`,{categoryName:newcategory})
+
+        if(response){
+          console.log(response);
+          setIsAddClicked(false)
+          setNewCategory('')
+          
+        }
+      } catch(error){
+
+      }
+    } 
 
 
     const deleteConfirmed = async (name)=> {
@@ -81,10 +99,23 @@ export default function AdminCategory(){
 
     useEffect(() => {
         fetchData(); 
-    },[deleted]); 
+    },[deleted,isAddClicked]); 
     
     return(
-        <div className="flex">
+        <div className="w-1/2 mx-auto mt-[6rem]">
+        <div className="flex gap-10">
+        <input onChange={(e)=>{
+          setNewCategory(e.target.value)
+        }} className="px-4 h-fit w-full py-2 shadow-md rounded-full" placeholder="add category here..." value={newcategory}></input>
+        <button
+          onClick={() => {
+            handleAdd()
+          }}
+          className="px-4 h-fit py-2 bg-black text-white text-sm font-bold rounded-full mb-10"
+        >
+          ADD
+        </button>
+        </div>
 
         {table.length?
             <CategoryTable categories={table} controlDelete={controlDelete} />

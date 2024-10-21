@@ -168,9 +168,11 @@ export function Table({ properties,controlEdit,controlDelete}) {
                     color="blue-gray"
                     className="font-medium"
                   >
-                    {property.features.map((feature)=>{
-                      <h1>{feature}</h1>
-                    })}
+                    {
+                    //   property.features.map((feature)=>{
+                    //   <h1>{feature}</h1>
+                    // })
+                  }
                   </Typography>
                 </td>
                 <td className={classes}>

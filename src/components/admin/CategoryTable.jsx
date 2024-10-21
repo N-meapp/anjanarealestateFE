@@ -6,7 +6,7 @@ export default function CategoryTable({categories,controlDelete}) {
   console.log(categories,'categories....');
   
   return (
-    <Card className="h-full w-1/2 mx-auto mt-[6rem]">
+    <Card className="h-full ">
       <table className="w-full min-w-max table-auto text-left">
         <thead>
           <tr>

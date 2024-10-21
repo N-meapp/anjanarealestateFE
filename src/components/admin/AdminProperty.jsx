@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 import { Table } from "./Table";
-import axios from "axios";
 import EditModal from "./EditModal";
 import Swal from "sweetalert2";
 import Search from "../Search";
+import { BASE_URL } from "../../Constats/Constats";
+import axios from "axios";
 
 function AdminProperty() {
-  const BASE_URL = import.meta.env.VITE_BASE_URL;
-  console.log(BASE_URL);
 
+
+    console.log(BASE_URL,'baseurll...');
+    
   const [table, setTable] = useState([]);
   const [singleProperty, setSingleProperty] = useState();
   const [deleted, setDeleted] = useState(false);
@@ -52,7 +54,7 @@ function AdminProperty() {
       text: "You won't be able to revert this!",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
+      confirmButtonColor: "red",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
     }).then(async (result) => {
@@ -82,7 +84,9 @@ function AdminProperty() {
     console.log("fetchData called..");
 
     try {
-      const response = await axios.get(`${BASE_URL}/users/allPropertyList`);
+
+        const response = await axios.get(`${BASE_URL}/users/allPropertyList`)
+      
 
       setTable(response.data.data);
     } catch (error) {
@@ -92,7 +96,7 @@ function AdminProperty() {
 
   useEffect(() => {
     fetchData();
-  }, [deleted]);
+  }, [deleted,isAddClicked,isEditClicked]);
 
   return (
     <div>

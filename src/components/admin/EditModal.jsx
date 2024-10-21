@@ -1,12 +1,28 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react'
 import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
 import EditForm from './EditForm'
+import { toast, ToastContainer } from 'react-toastify'
 
 export default function EditModal({singleProperty,setIsClicked,isClicked}) {
   
+  const [imageDeleted, setImageDeleted] = useState(false);
+
+  const notify = () => toast.success("Deleted successfully",{
+    position:'top-right',
+    autoClose:2000
+  });
+
+
+  useEffect(() => {
+    if (imageDeleted) {
+      notify();
+      setImageDeleted(false);
+    }
+  }, [imageDeleted]);
+
 
   
   const handleClick = ()=>{
@@ -18,6 +34,7 @@ export default function EditModal({singleProperty,setIsClicked,isClicked}) {
   }
 
   return (
+    <div>
     <Dialog open={isClicked} onClose={handleClick} className="relative z-10">
       <DialogBackdrop
         transition
@@ -30,10 +47,12 @@ export default function EditModal({singleProperty,setIsClicked,isClicked}) {
             transition
             className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95"
           >
-          <EditForm data={singleProperty} />
+          <EditForm data={singleProperty} setImageDeleted={setImageDeleted} isClicked={isClicked} setIsClicked={setIsClicked} />
           </DialogPanel>
         </div>
       </div>
-    </Dialog>
+      </Dialog>
+      <ToastContainer />
+      </div>
   )
 }

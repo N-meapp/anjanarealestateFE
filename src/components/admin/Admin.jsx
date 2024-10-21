@@ -6,6 +6,7 @@ import { useState } from 'react'
 import Dashboard from './Dashboard'
 import AdminProperty from './AdminProperty'
 import AddProperty from './AddProperty'
+import Youtube from './Youtube'
 
 export default function Admin(){
 
@@ -25,8 +26,8 @@ export default function Admin(){
             <AdminProperty />:
             tab=='category'?
             <AdminCategory />:
-            tab=='addproperty'?
-            <AddProperty />:
+            tab=='youtube'?
+            <Youtube />:
             null
         }
         </div>

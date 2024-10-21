@@ -1,49 +1,30 @@
-import React, { useState } from "react";
-import ItemsTable from "./items/ItemsTable";
-import SideBar from "./SideBar";
-import CategoriesTable from "./categories/CategoriesTable";
-// import OrdersCard from "./OrdersCard";
-import AddNew from "./addNew/AddNew";
+export default function Dashboard(){
+    return(
+        <div>
+        <div className='flex mt-20 justify-around'>
+        <div className='h-40 w-1/3 bg-[white] shadow-lg rounded-2xl'>
+          <h1 className='font-bold text-xl text-center mt-5 text-[#000000a9]'>Total Properties</h1>
+          <h1 className='font-bold text-3xl text-center mt-5 text-[#000000]'>20000</h1>
 
 
-function Dashboard() {
-  const [selectedTab, setSelectedTab] = useState('Orders');
-  
-  return (
-    <div>
-      <div className="">
-
-      
-      <SideBar setSelectedTab={setSelectedTab} selectedTab={selectedTab} />
-
-      <div className="p-4 sm:ml-64">
-        <div className="p-4 border-gray-200 rounded-lg  dark:border-gray-700">
-          <div className="grid gap-4 mb-4">
-            <div className="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
-              <p className="text-2xl custom-font text-[#000000] dark:text-[#000000]">
-                {selectedTab}
-              </p>
-            </div>
-          </div>
-          <div className="relative overflow-x-auto shadow-md sm:rounded-lg pb-20">
-            {selectedTab == "Items" ? (
-              <ItemsTable />
-            ) : selectedTab == "Categories" ? (
-              <CategoriesTable />
-            ) : selectedTab == "Orders" ? (
-              // <OrdersCard />
-              <CategoriesTable />
-            ) : selectedTab == "Add new" ? (
-              <AddNew />
-            ) : (
-              <h1>Logout</h1>
-            )}
-          </div>
         </div>
-      </div>
-      </div>
-    </div>
-  );
+        <div className='h-40 w-1/3 bg-[white]  shadow-lg rounded-2xl'>
+        <h1 className='font-bold text-xl text-center mt-5 text-[#000000a9]'>Total Categories</h1>
+          <h1 className='font-bold text-3xl text-center mt-5 text-[#000000]'>2</h1>
+        </div>
+        </div>
+        <div className='w-4/5 mt-10 mx-auto border-[#00000033] border-2 rounded-3xl flex p-10 gap-9'>
+        <div className='w-4/6'>
+        <h1 className='font-bold text-lg text-center text-[#000000a9] '>Categpries</h1>
+        <h1 className='font-medium text-base text-center mt-5 text-[#000000a9] p-3 bg-white rounded-full shadow-md'>Land</h1>
+        <h1 className='font-medium text-base text-center mt-5 text-[#000000a9] p-3 bg-white rounded-full shadow-md'>House</h1>
+        </div>
+        <div className='w-2/6'>
+        <h1 className='font-bold text-lg text-center text-[#000000a9]'>count</h1>
+        <h1 className='font-bold text-base text-center mt-5 text-[#000000a9] p-3 bg-white rounded-full shadow-md'>500</h1>
+        <h1 className='font-bold text-base text-center mt-5 text-[#000000a9] p-3 bg-white rounded-full shadow-md'>34534</h1>
+        </div>
+        </div>
+        </div>
+    )
 }
-
-export default Dashboard;

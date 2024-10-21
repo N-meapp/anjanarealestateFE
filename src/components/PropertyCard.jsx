@@ -38,7 +38,7 @@ export default function PropertyCard(props){
       {props.status}
     </p>
     <button onClick={()=>
-      navigate('/property-details')
+      navigate(`/property-details/${props.id}`)
     } id="view" class="text-slate-600 leading-normal mt-4 text-[#ffffffe4] float-right font-semibold bg-[#010404] w-fit px-3 py-2 text-sm rounded-full">
     view details
     </button>

@@ -163,3 +163,61 @@ transition: all 0.5s;
 .scroll-container::-webkit-scrollbar {
   display: none; /* Hide scrollbar in WebKit browsers (Chrome, Safari) */
 }
+
+
+.round{
+  rotate: 0deg;
+  transition: all,1s;
+}
+
+
+.round:hover{
+  rotate: 50deg;
+}
+
+
+.dropdown-category span{
+
+  padding-top: 0px;
+  margin-left: 1rem;
+}
+
+
+
+
+.bounce-out-down {
+  animation: bounce-out-down 1s ease;
+}
+@keyframes bounce-out-down {
+  0% { transform: translateY(-30px); 
+    opacity: 0;
+  }
+  /* 50% {
+    opacity: 0.5;
+    transform: translateY(-10px);
+  } */
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+
+
+.bounce-out-up {
+  animation: bounce-out-up 1s ease;
+}
+@keyframes bounce-out-up {
+  0% { transform: translateY(0px); 
+    opacity: 1;
+  }
+  /* 50% {
+    opacity: 0.5;
+    transform: translateY(-10px);
+  } */
+  100% {
+    opacity: 0;
+    display: none;
+    transform: translateY(-30px);
+  }
+}

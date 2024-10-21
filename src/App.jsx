@@ -4,12 +4,13 @@ import './App.css'
 import NavbarDefault from './components/NavBar'
 import SingleProperty from './components/SingleProperty'
 import Home from './components/Home'
-import Dashboard from './components/Admin1/Dashboard'
+import Dashboard from './components/Admin/Dashboard'
 import { Slider } from '@material-tailwind/react'
-import AdminSidebar from './components/Admin1/SideBar'
-import AdminProperty from './components/Admin1/AdminProperty'
-import AdminCategory from './components/Admin1/AdminCategory'
-import Admin from './components/Admin1/Admin'
+import AdminSidebar from './components/Admin/SideBar'
+import AdminProperty from './components/Admin/AdminProperty'
+import AdminCategory from './components/Admin/AdminCategory'
+import Admin from './components/Admin/Admin'
+import Footer from './components/Footer'
 // import Dashboard from './components/admin/Dashboard'
 Dashboard
 
@@ -32,11 +33,12 @@ function App() {
     <BrowserRouter>
     <Routes>
     <Route path='/admin' element={<Admin />}/>
-      <Route path="/property-details" element={<SingleProperty />}/>
+      <Route path="/property-details/:p_id" element={<SingleProperty />}/>
       <Route path="/" element={<Home />}>
         </Route>
       </Routes>
     </BrowserRouter>
+    <Footer />
     </div>
 
 

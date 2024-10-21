@@ -18,7 +18,7 @@ export default function SingleProperty() {
 
   const getSingleProperty = async () => {
     try {
-      const response = await axios.get(`${BASE_URL}users/singleProperty`, { params: { propertyId: p_id } });
+      const response = await axios.get(`${BASE_URL}/users/singleProperty`, { params: { propertyId: p_id } });
 
       if (response.data && response.data.data) {
         setSinglePropertyData(response.data.data);
@@ -135,7 +135,7 @@ console.log(singlePropertyData, "data fetchhhhh")
           </div>
           <div>
           <h1 className="text-[#00000071]">contact</h1>
-        <h1 className="text-[black] font-bold">{singlePropertyData.}</h1>
+        <h1 className="text-[black] font-bold">{singlePropertyData.contactNumber}</h1>
           </div>
           </div>
         </div>
