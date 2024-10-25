@@ -8,20 +8,11 @@ body{
 } */
 
 
-/* .position-area{
-    inset-area: center;
-} */
-
-body, html {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.position-area{
+    /* inset-area: center; */
+    left: 0;
+    right: 0;
+    margin-inline: auto;
 }
 
 

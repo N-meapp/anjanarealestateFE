@@ -18,6 +18,7 @@ export default function Home(){
         <Features />
         <div className='p-8'><Videos /></div>
         <ContactPage />
+        <CountOfAssets />
         </div>
     )
 }

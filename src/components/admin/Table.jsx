@@ -146,7 +146,9 @@ export function Table({ properties,controlEdit,controlDelete}) {
                     color="blue-gray"
                     className="font-medium"
                   >
-                    {property.photos}
+
+                    <img src={property.photos[0]} alt="pics" />
+                    {/* {property.photos} */}
                   </Typography>
                 </td>
                 <td className={classes}>

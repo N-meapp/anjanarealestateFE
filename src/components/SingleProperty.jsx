@@ -48,13 +48,13 @@ export default function SingleProperty() {
   console.log(singlePropertyData, "single dataaa");
   console.log(singlePropertyData, "data fetchhhhh");
   return (
-    <div className="pt-36 md:pt-40 w-full h-auto md:px-12 px-4">
-      <div className="w-full h-20 grid grid-cols-2 md:mb-10">
-        <div className="content-center w-max hidden md:block">
-          <h1 className="content-center px-4 text-white rounded-full py-2 bg-[#26a69a] font-bold md:font-extrabold text-xl md:text-2xl">
-            ₹ {singlePropertyData.rate}
-          </h1>
-        </div>
+    <div className="pt-28 md:pt-40 w-full h-auto md:px-12 px-4" style={{marginBottom:'100px'}}>
+      <div className="w-full h-20 grid grid-cols-2 mb-10">   
+      <div className="content-center w-max hidden md:block">
+      <h1 className="content-center px-4 text-white rounded-full py-2 bg-[#26a69a] font-bold md:font-extrabold text-xl md:text-2xl">
+        ₹ {singlePropertyData.rate}
+      </h1>
+      </div>
 
         <div className="content-center md:w-full w-[130%]">
           <h1 className="md:text-xl text-base font-bold pb-5">
@@ -69,7 +69,7 @@ export default function SingleProperty() {
       </div>
       <div className="md:flex gap-5">
         <div className="md:w-[40%] w-[100%]">
-          <ImageGallery imgArray={imgArray} />
+          <ImageGallery imgArray={singlePropertyData.photos} />
         </div>
         <div className="w-full md:w-[60%] mb-96 mt-6 md:mt-0 rounded-xl">
           <div className="bg-[#ffffff] w-full py-6 rounded-xl grid md:grid-cols-5 grid-cols-3 text-center items-center shadow-xl mb-12 justify-around justify-items-center">

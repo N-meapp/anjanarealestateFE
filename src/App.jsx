@@ -10,6 +10,7 @@ import AboutPage from './components/AboutPage'
 import GalleryPage from './components/GalleryPage'
 import ContactPage from './components/ContactPage'
 import AdminRoute from './components/admin/AdminRoute'
+import ActionBtn from './components/ActionBtn'
 
 
 
@@ -38,9 +39,11 @@ function App() {
       </Routes>
     </BrowserRouter>
     {!isAdmin?
-      <Footer />:null
+      <div>
+     <ActionBtn />
+    <Footer />
+      </div>:null
     }
-    
     </div>
 
 

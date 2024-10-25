@@ -126,6 +126,7 @@ export default function ListCategory() {
                                      <PropertyCard
                                            key={property._id}
                                            id={property._id}
+                                           img={property.photos[0]}
                                            rate={property.rate}
                                            area={property.area}
                                            address={property.address}
@@ -157,6 +158,7 @@ export default function ListCategory() {
                                             <PropertyCard
                                                 key={property._id}
                                                 id={property._id}
+                                                img={property.photos[0]}
                                                 rate={property.rate}
                                                 area={property.area}
                                                 address={property.address}

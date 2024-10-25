@@ -1,94 +1,74 @@
-import { useEffect, useState,useRef } from "react"
+import { useEffect, useState } from "react";
 
+export default function CountOfAssets() {
+    const [countOne, setCountOne] = useState(0);
+    const [countTwo, setCountTwo] = useState(0);
+    const [countThree, setCountThree] = useState(0);
+    const [countFour, setCountFour] = useState(0);
+    const [hasCounted, setHasCounted] = useState(false); // Track if counting has occurred
 
-export default function CountOfAssets(){
-
-    const [countOne,setCountOne] = useState(0)
-    const [countTwo,setCountTwo] = useState(0)
-    const [countThree,setCountThree] = useState(0)
-    const [countFour,setCountFour] = useState(0)
-
-    const handleCount =()=>{
-
-        let count = 0
-        for(let i=0;i<20;i++){
+    const handleCount = () => {
+        let count = 0;
+        for (let i = 0; i < 20; i++) {
             setTimeout(() => {
-                if(i==19){
-                    setCountOne(5999)
-                    setCountTwo(6999)
-                    setCountThree(4322)
-                    setCountFour(1200)
-                }else{
-                    setCountOne(count+i*32)
-                    setCountTwo(count+i*32)
-                    setCountThree(count+i*32)
-                    setCountFour(count+i*32)
+                if (i === 19) {
+                    setCountOne(5999);
+                    setCountTwo(6999);
+                    setCountThree(4322);
+                    setCountFour(1200);
+                } else {
+                    setCountOne(count + i * 32);
+                    setCountTwo(count + i * 32);
+                    setCountThree(count + i * 32);
+                    setCountFour(count + i * 32);
                 }
-            }, i*50);
+            }, i * 50);
         }
-        
     };
 
-
-
     useEffect(() => {
-        // Function to handle scroll event
         const handleScroll = () => {
-            const targetDiv = document.getElementById('scroll-div'); // Replace with your div's ID
-            if (targetDiv) {
+            const targetDiv = document.getElementById("scroll-div");
+            if (targetDiv && !hasCounted) { // Only trigger if hasCounted is false
                 const scrollPosition = window.scrollY || window.pageYOffset;
-
-                // Get the top position of the target div
                 const divTop = targetDiv.getBoundingClientRect().top + scrollPosition;
 
-                console.log('Scroll Position:', scrollPosition, 'Div Top:', divTop);
-
-                if (Math.floor(scrollPosition) <= Math.floor(divTop)) {
-                    handleCount()
-                } else {
-                    console.log('Scrollbar position is NOT equal to the top position of the div.');
+                if (scrollPosition >= divTop - window.innerHeight + 100) {
+                    handleCount();
+                    setHasCounted(true); // Set to true after counting
                 }
             }
         };
 
-        // Add event listener for scroll
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [hasCounted]);
 
-        // Cleanup event listener on component unmount
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+    return (
+        <>
+        <div className="container mx-auto px-4">
+         <h1 class="overflow-hidden pr-5 text-2xl font-bold text-[#26a69a]">#Happy clients</h1>
+         <h1 class="overflow-hidden pr-5 text-5xl font-extrabold text-[#a4cbcb]">Push Your Visitors Into Happy Customers</h1>
+         </div>
+             <div id="scroll-div" className="md:flex gap-5 w-full justify-around mb-36 md:mt-36 mt-20 counter-div" >
 
-
-
-    const targetRef = useRef(null); // Reference to the target div
-  const [isVisible, setIsVisible] = useState(false); // State to track visibility
-
-
-
-
-
-
-    return(
-         <div id="scroll-div"
-         className=" flex gap-5 w-full justify-around mb-96 counter-div">
-          <div className="text-center">
-          <h1 className="text-4xl text-black font-extrabold">{countOne}</h1>
-          <h1 className="text-[#00000079] text-sm mt-3"># of Buy Properties</h1>
-          </div>
-          <div className="text-center">
-          <h1 onClick={handleCount} className="text-4xl text-black font-extrabold">{countTwo}</h1>
-          <h1 className="text-[#00000079] text-sm mt-3"># of Buy Properties</h1>
-          </div>
-          <div className="text-center">
-          <h1 className="text-4xl text-black font-extrabold">{countThree}</h1>
-          <h1 className="text-[#00000079] text-sm mt-3"># of Buy Properties</h1>
-          </div>
-          <div className="text-center">
-          <h1 className="text-4xl text-black font-extrabold">{countFour}</h1>
-          <h1 className="text-[#00000079] text-sm mt-3"># of Buy Properties</h1>
-          </div>
+            <div className="text-center md:mb-0 mb-12">
+                <h1 className="text-4xl text-black font-extrabold">{countOne}</h1>
+                <h1 className="text-[#00000079] text-sm mt-3"># of Buy Properties</h1>
+            </div>
+            <div className="text-center  md:mb-0 mb-12">
+                <h1 className="text-4xl text-black font-extrabold">{countTwo}</h1>
+                <h1 className="text-[#00000079] text-sm mt-3"># of Rent Properties</h1>
+            </div>
+            <div className="text-center  md:mb-0 mb-12">
+                <h1 className="text-4xl text-black font-extrabold">{countThree}</h1>
+                <h1 className="text-[#00000079] text-sm mt-3"># of Lease Properties</h1>
+            </div>
+            <div className="text-center  md:mb-0 mb-12">
+                <h1 className="text-4xl text-black font-extrabold">{countFour} +</h1>
+                <h1 className="text-[#00000079] text-sm mt-3"># of Sold Properties</h1>
+            </div>
         </div>
-    )
+        </>
+    );
 }

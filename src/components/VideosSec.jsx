@@ -5,83 +5,98 @@ import { BASE_URL } from "../Constats/Constats"
 
 export default function Videos() {
 
-  const [videoLink, setVedioLink] = useState([])
+  const [videoLink, setVideoLink] = useState([]);
+  console.log(videoLink, "video link 555555555555");
+
 
   useEffect(()=>{
     getVideoLink()
   },[])
 
-  useEffect(() => {
-    const slider = new Glide(".glide-03", {
-      type: "carousel",
-      focusAt: "center",
-      perView: 3,
-      autoplay: 3000,
-      animationDuration: 700,
-      gap: 24,
-      classNames: {
-        nav: {
-          active: "[&>*]:bg-wuiSlate-700",
-        },
-      },
-      breakpoints: {
-        1024: {
-          perView: 2,
-        },
-        640: {
-          perView: 1,
-        },
-      },
-    }).mount()
 
-    return () => {
-      slider.destroy()
-    }
-  }, [])
-
-
-  const getVideoLink = async()=>{
-
+  const getVideoLink = async () => {
     try {
+      const response = await axios.get(`${BASE_URL}/admin/videoList`);
+      console.log(response.data.data, "video linksssss 222222");
 
-      const response = await axios.get(`${BASE_URL}/users/videoList`)
-
-      if(response){
-       setVedioLink(response.data)
-      }else{
-        console.log("data not found")
+      if(response.data.data) {
+        setVideoLink(response.data.data); // Correct setter function
+      } else {
+        console.log("Data not found");
       }
-      
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-    
- 
+  };
 
 
-  }
+  useEffect(() => {
+    if (videoLink.length > 0) {
+      const slider = new Glide(".glide-03", {
+        type: "carousel",
+        focusAt: "center",
+        perView: 3,
+        autoplay: 3000,
+        animationDuration: 700,
+        gap: 24,
+        classNames: {
+          nav: {
+            active: "[&>*]:bg-wuiSlate-700",
+          },
+        },
+        breakpoints: {
+          1024: {
+            perView: 2,
+          },
+          640: {
+            perView: 1,
+          },
+        },
+      }).mount();
+  
+      return () => {
+        slider.destroy();
+      };
+    }
+  }, [videoLink]);
+
+
 
 
   return (
     <div>
+       <h1 className="text-5xl font-bold  text-[#005555] text-center relative mt-10 " style={{marginTop: '100px', marginBottom: '100px'}}>
+            Our videos
+            <div style={{ width: '100px', marginTop: "10px" }} className="border-b-2 border-[#005555] absolute left-1/2 transform -translate-x-1/2 top-full"></div>
+        </h1>
       {/*<!-- Component: Carousel with indicators & controls inside --> */}
       <div className="glide-03 relative w-full mt-16 mb-24">
         {/*    <!-- Slides --> */}
         <div className="overflow-hidden" data-glide-el="track">
+
+       
           <ul className="whitespace-no-wrap flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform] relative flex w-full overflow-hidden p-0">
-            <li>
-              <iframe
-                width="100%" 
-                height="100%" 
-                className="m-auto max-h-full w-full max-w-full"
-                src="https://youtube.com/embed/_ULTHgeMKjI"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                title="YouTube Video" 
-               ></iframe>
-            </li>
-            <li>
+       
+          {videoLink.map((link) => {
+              return (
+                <li key={link}>
+                <iframe
+                  width="100%" 
+                  height="370px" 
+                  className="m-auto max-h-full w-full max-w-full rounded-[20px] "  // Use Tailwind's custom rounded class
+                  src={link.video}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  title="YouTube Video"
+              ></iframe>
+
+           </li>
+         );
+       })}
+
+
+            {/* <li>
               <img
                 src="https://Tailwindmix.b-cdn.net/carousel/carousel-image-01.jpg"
                 className="m-auto max-h-full w-full max-w-full"
@@ -104,7 +119,7 @@ export default function Videos() {
                 src="https://Tailwindmix.b-cdn.net/carousel/carousel-image-04.jpg"
                 className="m-auto max-h-full w-full max-w-full"
               />
-            </li>
+            </li> */}
           </ul>
         </div>
         {/*    <!-- Controls --> */}

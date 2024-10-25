@@ -10,8 +10,6 @@ function TitlePage() {
 
   const carouselRef = useRef(null); // Reference to the carousel to control it
 
-
-
   return (
     <div className="relative headersection md:grid md:grid-cols-2">
 
