@@ -106,6 +106,7 @@ export default function ListingCards(){
                                      <PropertyCard
                                            key={property._id}
                                            id={property._id}
+                                           img={property.photos[0]}
                                            rate={property.rate}
                                            area={property.area}
                                            address={property.address}
@@ -124,11 +125,20 @@ export default function ListingCards(){
             
         {homeData.map((property)=>{
             return(
-                <PropertyCard id={property._id} rate={property.rate} area={property.area} address={property.address} status={property.status} name={property.name} contact={property.contactNumber} />
-            )
+                <PropertyCard id={property._id} rate={property.rate} img={property.photos[0]} area={property.area} address={property.address} status={property.status} name={property.name} contact={property.contactNumber} />
+            ) 
         })}
         </div>
 }
+
+<div className="container mx-auto text-center">
+    <a href="/all-category-list">
+  <button className="px-8 py-3 rounded-full mt-12 border-2 text-sm text-[#26a69a] font-bold border-[#26a69a] animate-bounce">
+    Explore all properties {">>"}
+  </button>
+  </a>
+</div>
+
         </div>
         </div>
 

@@ -18,9 +18,10 @@ export default function Home(){
         <Services />
         <Features />
         <div className='p-8'><Videos /></div>
+        <CountOfAssets />
         
         </div>
     )
-    // <CountOfAssets />
+   
     // <Category />
 }

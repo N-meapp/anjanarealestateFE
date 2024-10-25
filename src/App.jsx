@@ -15,6 +15,7 @@ import Footer from './components/Footer'
 import ListCategory from './components/ListCategory'
 import AboutPage from './components/AboutPage'
 import GalleryPage from './components/GalleryPage'
+import ActionBtn from './components/ActionBtn'
 
 
 
@@ -42,6 +43,7 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+    <ActionBtn />
     <Footer />
     </div>
 

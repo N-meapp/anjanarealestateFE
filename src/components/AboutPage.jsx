@@ -1,6 +1,7 @@
 import React from 'react';
 import NavbarDefault from './NavBar';
 import About from './About';
+import CountOfAssets from './CountOfAssets';
 
 
 export default function AboutPage() {
@@ -8,9 +9,11 @@ export default function AboutPage() {
         <div>
             {/* <NavbarDefault /> */}
 
-           <div style={{"margin-top": "150px"}}>
+           <div style={{"padding-top": "150px"}}>
             <About />
            </div>
+
+           <CountOfAssets />
 
         </div>
     );

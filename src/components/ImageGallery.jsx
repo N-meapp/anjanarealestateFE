@@ -12,6 +12,7 @@ export default function ImageGallery({ imgArray }) {
             class="rounded-2xl object-center w-auto"
             src={selectedImg}
             alt=""
+            style={{width:'100%', height:'500px', objectFit: 'cover'}}
           />
         </div>
         <div class="grid grid-cols-4 gap-2">

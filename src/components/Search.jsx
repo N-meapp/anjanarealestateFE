@@ -1,7 +1,7 @@
 export default function Search({ handleSearchChange, searchTerm }){
     return(
 <div>
-<div class="md:w-[50%] w-[90%] mx-auto md:mt-40 mt-24">
+<div class="md:w-[50%] w-[90%] mx-auto md:pt-40 pt-24">
   <div class="relative">
     <input
       class="w-full bg-[#ffffff27] placeholder:text-slate-400 text-black text-slate-700 text-sm border border-[#0055553d] rounded-full pl-3 pr-16 md:pr-28 py-4 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300"

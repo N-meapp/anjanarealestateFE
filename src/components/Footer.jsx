@@ -1,5 +1,6 @@
-import { faWheatAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebookF, faDribbble, faGithub, faInstagram, faYoutube,  } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope,faPhone } from "@fortawesome/free-solid-svg-icons"; // Your original icon
 
 
 export default function Footer(){
@@ -17,12 +18,20 @@ export default function Footer(){
         </h5>
         <div class="mt-6 lg:mb-0 mb-6">
           <button class="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-          <FontAwesomeIcon icon={faWheatAlt} /><FontAwesomeIcon icon="fa-brands fa-facebook-f" />
-          </button><button class="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-            <i class="fab fa-facebook-square"></i></button><button class="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-            <i class="fab fa-dribbble"></i></button><button class="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-            <i class="fab fa-github"></i>
-          </button>
+          <a href="https://www.facebook.com/profile.php?id=61567087028926">
+          <FontAwesomeIcon icon={faFacebookF} />
+          </a>
+          </button>  
+          <button class="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
+          <a href="https://www.instagram.com/anjana_realestates/">
+          <FontAwesomeIcon icon={faInstagram} />
+          </a>
+            </button>
+            <button class="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
+            <a href="https://youtube.com/@anjanarealestates?si=a_XYjj6dgLMSSxqK">
+            <FontAwesomeIcon icon={faYoutube} />
+            </a>
+            </button>
         </div>
       </div>
       <div class="w-full lg:w-6/12 px-4">
@@ -31,33 +40,47 @@ export default function Footer(){
             <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2 text-white">Useful Links</span>
             <ul class="list-unstyled">
               <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm text-[#ffffff86]" href="https://www.creative-tim.com/presentation?ref=njs-profile">About Us</a>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm text-[#ffffff86]" href="/">Home</a>
               </li>
               <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm text-[#ffffff86]" href="https://blog.creative-tim.com?ref=njs-profile">Blog</a>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm text-[#ffffff86]" href="/all-category-list">Properties</a>
               </li>
               <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm text-[#ffffff86]" href="https://www.github.com/creativetimofficial?ref=njs-profile">Github</a>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm text-[#ffffff86]" href="/about-page">About</a>
               </li>
               <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm text-[#ffffff86]" href="https://www.creative-tim.com/bootstrap-themes/free?ref=njs-profile">Free Products</a>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm text-[#ffffff86]" href="/gallery-page">Gallery</a>
+              </li>
+              <li>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm text-[#ffffff86]" href="/contact-page">Contact us</a>
               </li>
             </ul>
           </div>
           <div class="w-full lg:w-4/12 px-4">
-            <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2 text-white">Other Resources</span>
+            <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2 text-white">Our Services</span>
             <ul class="list-unstyled text-[#ffffff86]">
               <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://github.com/creativetimofficial/notus-js/blob/main/LICENSE.md?ref=njs-profile">MIT License</a>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/terms?ref=njs-profile">Properties</a>
               </li>
               <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/terms?ref=njs-profile">Terms &amp; Conditions</a>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/privacy?ref=njs-profile">Property For Sale</a>
               </li>
               <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/privacy?ref=njs-profile">Privacy Policy</a>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/contact-us?ref=njs-profile">Real Estate Agent</a>
               </li>
               <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/contact-us?ref=njs-profile">Contact Us</a>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/contact-us?ref=njs-profile">House For Sale</a>
+              </li>
+            </ul>
+          </div>
+          <div class="w-full lg:w-4/12 px-4">
+            <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2 text-white">Contact</span>
+            <ul class="list-unstyled text-[#ffffff86]">
+              <li className="">
+                <a class="flex text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/terms?ref=njs-profile">anjanarealestates50@gmail.com</a>
+              </li>
+              <li>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/privacy?ref=njs-profile"><FontAwesomeIcon icon={faPhone} /> +91 99657 35888</a>
               </li>
             </ul>
           </div>
@@ -67,10 +90,10 @@ export default function Footer(){
     <hr class="my-6 border-blueGray-300"/>
     <div class="flex flex-wrap items-center md:justify-between justify-center">
       <div class="w-full md:w-4/12 px-4 mx-auto text-center">
-        <div class="text-sm text-blueGray-500 font-semibold py-1">
-          Copyright © <span id="get-current-year">2021</span>
-          <a href="https://www.creative-tim.com/product/notus-js" class="text-blueGray-500 hover:text-gray-800" target="_blank"> Notus JS by
-          <a href="https://www.creative-tim.com?ref=njs-profile" class="text-blueGray-500 hover:text-blueGray-800"/>Creative Tim</a>.
+        <div class="text-sm text-teal-200 font-semibold py-1">
+          Copyright © <span id="get-current-year">2024</span>
+          <a href="#" class="text-blueGray-500 hover:text-gray-800" target="_blank"> Anjana Realestate</a>
+          <a href="https://nmesmartech.com" class="text-blueGray-500 hover:text-gray-800" target="_blank">, <br/> Made by <span className="text-white">N-me Smartech</span></a>
         </div>
       </div>
     </div>

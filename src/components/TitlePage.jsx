@@ -5,7 +5,7 @@ import HomeCarousel from "./HomeCarousel";
 
 function TitlePage(){
     return(
-        <div className="relative headersection md:grid md:grid-cols-2 h-[40rem]">
+        <div className="relative headersection md:grid md:grid-cols-2 h-[100vh]">
           <NextArrow />
           <PrevArrow />
         <div className="h-autofont-bold content-center">
