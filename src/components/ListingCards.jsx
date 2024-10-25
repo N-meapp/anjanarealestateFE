@@ -96,7 +96,7 @@ export default function ListingCards(){
         <hr className="w-10"></hr>
         </div>
         {searchTerm ?
-                <div className="md:grid grid-cols-1 gap-10 px-10">
+                <div className="md:grid grid-cols-1 gap-10 px-3 md:px-10">
                  <div className="md:grid lg:grid-cols-4 sm:grid-cols-2 mt-4">
                         {searchFechedData.map((property) => {
                             // Check if the property category matches the current category
@@ -118,7 +118,7 @@ export default function ListingCards(){
                          </div>
                         </div>
                                 :
-        <div className="md:grid grid-cols-4 justify-items-center px-10">
+        <div className="md:grid grid-cols-4 justify-items-center px-3 md:px-10">
 
             
             

@@ -2,15 +2,28 @@ body{
   background: #effdf5;
 }
 
-element {
+/* element {
   position: absolute;
-  inset: 10px 20px 30px 40px; /* Top, right, bottom, left */
-}
+  inset: 10px 20px 30px 40px; 
+} */
 
 
-.position-area{
+/* .position-area{
     inset-area: center;
+} */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 
 
 .title-page1{
@@ -225,3 +238,10 @@ transition: all 0.5s;
     transform: translateY(-30px);
   }
 }
+
+
+.webkit-center{
+  text-align: -webkit-center;
+}
+
+

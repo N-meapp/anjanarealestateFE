@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import SingleVideo from "./SingleVideo";
 import { BASE_URL } from "../../Constats/Constats";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 
 
 export default function Youtube(){
     const [newVideo,setNewVideo] = useState()
 
+    const [isApiCalled,setIsApiCalled] = useState(false)
     const [videoArray,setVideoArray] = useState([])
 
     const getAllVideos =async()=>{
@@ -19,14 +21,14 @@ export default function Youtube(){
             console.log(error); 
         }
     }
-
     
     useEffect(()=>{
         getAllVideos()
-    },[videoArray])
+    },[isApiCalled])
 
 
     const handleAdd =async()=>{
+        setIsApiCalled(false)
         const url = newVideo
 
         const start = url.lastIndexOf("/") + 1;
@@ -40,13 +42,25 @@ export default function Youtube(){
         }
         try {
             const response = await axios.post(`${BASE_URL}/admin/add-video`,body);
-            console.log(response.data.data);
+            console.log(response.data.data,'videoooooooooo');
+            if(response.data.data){
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Your video added successfully",
+                    showConfirmButton: false,
+                    timer: 2000
+                  }).then(()=>{
+                    setNewVideo('')
+                    setIsApiCalled(true)
+                  })
+            }
+            // setVideoArray(response)
         } catch (error) {
             console.log(error); 
         }
 
-        
-        
+    
         
     }
 
@@ -71,7 +85,7 @@ export default function Youtube(){
 
         {videoArray.map((videoObj)=>{
             return(
-                <SingleVideo url={videoObj.video} />
+                <SingleVideo url={videoObj.video} id={videoObj._id} setIsApiCalled={setIsApiCalled} />
             )
         })}
         

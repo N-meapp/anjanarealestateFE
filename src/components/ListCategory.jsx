@@ -64,6 +64,8 @@ export default function ListCategory() {
 
 
     const getSearchData = async (e) => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
         try {
             setSearchTerm(e.target.value)
             const searchKey = e.target.value
@@ -105,8 +107,8 @@ export default function ListCategory() {
         <div>
             {/* <NavbarDefault /> */}
             <Search searchTerm={searchTerm} handleSearchChange={getSearchData} />
-            <div className="md:pt-20 pt-10 pb-20">
-                <div className="md:ml-8 text-center md:text-left ">
+            <div className="md:pt-64 pt-48 pb-20">
+                <div className="md:ml-8 flex-ro text-center md:text-left ">
                     <h1 className="text-4xl font-bold mb-8 text-[#005555] leading-normal">Properties</h1>
                     <hr className="w-10" />
                 </div>
@@ -114,8 +116,8 @@ export default function ListCategory() {
 
 
 {searchTerm ?
-                <div className="md:grid grid-cols-1 gap-10 px-10">
-                 <div className="grid grid-cols-4 mt-4">
+                <div className="md:grid md:grid-cols-1 gap-10 px-3 md:px-10">
+                 <div className="grid md:grid-cols-4 mt-4">
                         {searchFechedData.map((property) => {
                             // Check if the property category matches the current category
                                
@@ -137,7 +139,7 @@ export default function ListCategory() {
                         </div>
                                 :
                        
-                <div className="md:grid grid-cols-1 gap-10 px-10">
+                <div className="md:grid grid-cols-1 gap-10 px-3 md:px-10">
                     {categoryData.map((category) => (
                         <div key={category} className="mb-10 w-full">
 
@@ -146,7 +148,7 @@ export default function ListCategory() {
                                  <div style={{ width: '200px' }} className="border-b-2 border-[#005555] absolute left-1/2 transform -translate-x-1/2 top-full"></div>
                              </h1>
 
-                            <div className="grid grid-cols-4 mt-4">
+                            <div className="grid md:grid-cols-4 mt-4">
                                 {categoryListData.map((property) => {
                                     // Check if the property category matches the current category
                                     if (category === property.category) {

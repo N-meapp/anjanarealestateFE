@@ -2,8 +2,10 @@ import { Select, Option } from "@material-tailwind/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { BASE_URL } from "../../Constats/Constats";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleExclamation } from "@fortawesome/free-solid-svg-icons";
 
-export function CategoryInputField({label,value,update,updatedData,objKey,type}) {
+export function CategoryInputField({label,value,update,updatedData,objKey,type,emptyFields}) {
 
     const [catArray,setCatArray] = useState([])
     const [category,setCategory] = useState(value)
@@ -26,16 +28,22 @@ export function CategoryInputField({label,value,update,updatedData,objKey,type})
 
     const addCategory = (data)=>{
 
+        console.log(data,'datiiiii');
+        
         setCategory(data)
-        updatedData.category = data
-        update(updatedData)
+        if(updatedData){
+            updatedData.category = data
+            update(updatedData)
+        }else{
+            update({category:data})
+        }
     }
 
 
   return (
     <div className="w-full">
-        <h1 className="mb-4 font-bold">{label}</h1>
-      <Select className="px-3 py-2 border-none dropdown-category rounded-full bg-[#00000010]" variant="standard" value={value}>
+        <h1 className="mb-3 font-bold">{label}</h1>
+      <Select className={`px-3 py-1 dropdown-category rounded-full bg-[#00000010] ${emptyFields.includes(objKey) && !category?'border-red-100 border':'border-none'}`} variant="standard" value={category}>
 
       
       {
@@ -49,6 +57,11 @@ export function CategoryInputField({label,value,update,updatedData,objKey,type})
       })}
 
       </Select>
+      {emptyFields.includes(objKey) && !category?
+                 
+        <p className="text-red-400 font-thin text-xs mt-1"><FontAwesomeIcon icon={faCircleExclamation} /> This field is required</p>:null
+
+    }
     </div>
   );
 }
