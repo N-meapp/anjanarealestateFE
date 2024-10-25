@@ -20,19 +20,18 @@ export default function ImageGallery({ imgArray }) {
             return image !== selectedImg ? (
 
 
-                index==4?(
-                    <div className="relative" onClick={()=>{
-                        // setSelectedImg(image)
-                      }}>
-                      <div className="bg-[#00000080] absolute h-full w-full text-white text-center content-center font-bold rounded-lg">+15</div>
+                // index==4?(
+                //     <div className="relative" onClick={()=>{
+                //         // setSelectedImg(image)
+                //       }}>
                       
-                        <img
-                          src={image}
-                          className="object-cover transition-all object-center h-20 max-w-full rounded-lg cursor-pointer"
-                          alt="gallery-image"
-                        />
-                      </div>  
-                ):
+                //         <img
+                //           src={image}
+                //           className="object-cover transition-all object-center h-20 max-w-full rounded-lg cursor-pointer"
+                //           alt="gallery-image"
+                //         />
+                //       </div>  
+                // ):
               <div onClick={()=>{
                 setSelectedImg(image)
               }}>

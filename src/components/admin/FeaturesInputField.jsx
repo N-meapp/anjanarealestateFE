@@ -13,15 +13,31 @@ export default function FeaturesInputField({ data, update, updatedData }) {
   const handleAdd = () => {
     const tempObj = featuresObj;
 
-    tempObj[key] = value;
+    if(key&&value){
 
-    setFeaturesObj(tempObj);
+      tempObj[key] = value;
+  
+      setFeaturesObj(tempObj);
+  
+      console.log(updatedData,'updated dataa');
 
-    updatedData.features = tempObj;
-    update(updatedData);
+        if(updatedData){
+          updatedData.features = tempObj;
+          update(updatedData);
 
-    setKey("");
-    setValue("");
+        }else{
+          const updatedData = {features:null}
+          updatedData.features = tempObj
+          update(updatedData)
+        }
+      
+  
+      setKey("");
+      setValue("");
+
+    }else{
+      
+    }
   };
 
   const handleDelete=(oldKey)=>{
@@ -67,25 +83,25 @@ export default function FeaturesInputField({ data, update, updatedData }) {
             </button>
             <input
               onChange={(e) => {
-                setKey(e.target.value);
+                setValue(e.target.value);
               }}
               className=" px-3 py-2  w-1/6 border-none rounded-l-full bg-[#00000010]  text-center"
-              value={key}
+              value={value}
               placeholder="count"
             ></input>
             <input
               onChange={(e) => {
-                setValue(e.target.value);
+                setKey(e.target.value);
               }}
               className=" px-3 py-2 w-full pr-20 border-none rounded-r-full bg-[#00000010] "
-              value={value}
+              value={key}
               placeholder="type your feature..."
             ></input>
           </div>
           {Object.entries(featuresObj).map(([key, value]) => (
             <div className="flex gap-1 mb-5">
               <div className="px-3 py-2 w-1/6 border-none h-10 text-center rounded-l-full bg-[#afaeae10] shadow-md text-blue-gray-700 font-sans text-sm font-bold">
-                {key}
+                {value}
               </div>
               <div className="px-3 py-2 w-full border-none h-10 rounded-r-full bg-[#afaeae10] shadow-md relative text-blue-gray-700 font-sans text-sm font-bold">
                 <FontAwesomeIcon
@@ -95,7 +111,7 @@ export default function FeaturesInputField({ data, update, updatedData }) {
                   icon={faCircleXmark}
                   className="text-red-700 w-6 h-5 absolute right-2 cursor-pointer bg-white rounded-full "
                 />
-                {value}
+                {key}
               </div>
             </div>
           ))}

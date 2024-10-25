@@ -17,15 +17,13 @@ import Swal from "sweetalert2";
 import { CategoryInputField } from "./CategoryInputField";
 
 export default function EditForm(data) {
-  console.log(data, "...............................");
-
-  const {isClicked, setIsClicked} = data
+  const { isClicked, setIsClicked, handleDelete } = data;
 
   const [updatedData, setUpdatedData] = useState(data ? data.data : null);
 
-  console.log(updatedData, "updated....");
-
   const [imageDeleted, setImageDeleted] = useState(false);
+
+  const [emptyFields,setEmptyFields] = useState([])
 
   const notify = () =>
     toast.success("Deleted successfully", {
@@ -40,113 +38,187 @@ export default function EditForm(data) {
     }
   }, [imageDeleted]);
 
-  const saveEdited = async () => {
-    const rate = updatedData.rate;
-    updatedData.rate = +rate;
-    const contactNumber = updatedData.contactNumber;
-    updatedData.contactNumber = +contactNumber;
+  const handleValidation = () => {
+    console.log(updatedData, "for validationssssss");
+    const loopArr = [
+      'address',
+      'area',
+      'category',
+      'contactNumber',
+      'furnishedStatus',
+      'name',
+      'photos',
+      'rate',
+      'status',
+    ];
 
-    const formData = new FormData();
+    if(updatedData){
 
-    console.log(updatedData, "updated,datalllll");
+      const outputArr = []
 
-    updatedData.photos.forEach((image, index) => {
-      console.log(image,'images.......');
-      
-      formData.append(`image`, image); // 'photos[]' is the key for the array of images
-    });
-
-    try {
-      const response = await axios.post(
-        `${BASE_URL}/admin/updateProperty/${updatedData._id}`,
-        formData,
-        { params: updatedData },
-        // updatedData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
+      for(let i=0;i<loopArr.length;i++){
+  
+        const res1 = loopArr[i] in updatedData
+        const res2 = updatedData[loopArr[i]]
+        console.log('not validdddd...',loopArr[i]);
+        if(!res1 || !res2){
+          
+          outputArr.push(loopArr[i])
         }
-      );
+      }
+    console.log(outputArr,'outtttputttt');
+    setEmptyFields(outputArr)
 
-      if(response.data.data && response.data.success){
-        Swal.fire({
-          icon: "success",
-          title: "Your work has been saved",
-          showConfirmButton: false,
-          timer: 1500,
-        }).then(()=>{
-          setIsClicked(false)
-        })
-      }else{
+    if(outputArr.length==0){
+      console.log('huuuuuuuuuu');
+      
+      let regex = /^[a-zA-Z]+$/;
+      const rate = +updatedData.rate
+      const contact = +updatedData.contactNumber
+      console.log('ajaj',rate,contact);
+      const resultRate = regex.test(rate)
+      const resultContact = regex.test(contact)
+      console.log(resultRate,resultContact,'hummmmmm');
+      
+      if(!resultRate && !resultContact){
+        return true
+      }
+      
+    }
+    return false
+    
+    }else{
+      console.log('hahhhhhhhh');
+setEmptyFields(loopArr)
+return false;
+    }
+  
+  };
+
+  const saveEdited = async () => {
+    const result = handleValidation();
+
+    if (result) {
+      const rate = updatedData.rate;
+      updatedData.rate = +rate;
+      const contactNumber = updatedData.contactNumber;
+      updatedData.contactNumber = +contactNumber;
+
+      const formData = new FormData();
+
+      updatedData.photos.forEach((image, index) => {
+        formData.append(`image`, image); // 'photos[]' is the key for the array of images
+      });
+
+      try {
+        const response = await axios.post(
+          `${BASE_URL}/admin/updateProperty/${updatedData._id}`,
+          formData,
+          { params: updatedData },
+          // updatedData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        );
+
+        if (response.data.data && response.data.success) {
+          Swal.fire({
+            icon: "success",
+            title: "Your work has been saved",
+            showConfirmButton: false,
+            timer: 1500,
+          }).then(() => {
+            setIsClicked(false);
+          });
+        } else {
+          Swal.fire({
+            icon: "warning",
+            title: "Something went wrong",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      } catch (error) {
         Swal.fire({
           icon: "warning",
-          title: "Something went wrong",
-          showConfirmButton: false,
-          timer: 1500
+          title: "something went wrong",
+          text: "connect to your technical team",
+          showConfirmButton: true,
         });
       }
-    } catch (error) {
+    }else{
+      console.log(result,'result.result..');
+      
       Swal.fire({
-        icon: "warning",
-        title: "something went wrong",
-        text:'connect to your technical team',
-        showConfirmButton: true,
+        title: "Oops!",
+        text: "Please check the fields",
+        icon: "info"
       });
     }
   };
 
   const saveAdded = async () => {
-    const rate = updatedData.rate;
-    updatedData.rate = +rate;
-    const contactNumber = updatedData.contactNumber;
-    console.log(updatedData);
-    
-    updatedData.contactNumber = +contactNumber;
+    const result = handleValidation();
 
-    const formData = new FormData();
-    
-    updatedData.photos.forEach((image, index) => {
-      formData.append(`image`, image);
-    });
-    console.log(updatedData, "newly adding data11111111111111");
+    if (result) {
+      const rate = updatedData.rate;
+      updatedData.rate = +rate;
+      const contactNumber = updatedData.contactNumber;
 
+      updatedData.contactNumber = +contactNumber;
 
-    try {
-      const response = await axios.post(
-        `${BASE_URL}/admin/addPropertyData`,
-        formData,
-        { params: updatedData },
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
+      const formData = new FormData();
+
+      updatedData.photos.forEach((image, index) => {
+        formData.append(`image`, image);
+      });
+
+      try {
+        const response = await axios.post(
+          `${BASE_URL}/admin/addPropertyData`,
+          formData,
+          { params: updatedData },
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        );
+
+        if (response.data.data && response.data.success) {
+          Swal.fire({
+            icon: "success",
+            title: "Your work has been saved",
+            showConfirmButton: false,
+            timer: 1500,
+          }).then(() => {
+            setIsClicked(false);
+          });
+        } else {
+          Swal.fire({
+            icon: "warning",
+            title: "Something went wrong",
+            showConfirmButton: false,
+            timer: 1500,
+          });
         }
-      );
-
-      if(response.data.data && response.data.success){
-        Swal.fire({
-          icon: "success",
-          title: "Your work has been saved",
-          showConfirmButton: false,
-          timer: 1500
-        }).then(()=>{
-          setIsClicked(false)
-        })
-      }else{
+      } catch (error) {
         Swal.fire({
           icon: "warning",
-          title: "Something went wrong",
-          showConfirmButton: false,
-          timer: 1500
+          title: "something went wrong",
+          text: "connect to your technical team",
+          showConfirmButton: true,
         });
       }
-    } catch (error) {
+    }else{
+      console.log(result,'resuuuuuu');
+      
       Swal.fire({
-        icon: "warning",
-        title: "something went wrong",
-        text:'connect to your technical team',
-        showConfirmButton: true,
+        title: "Oops!",
+        text: "Please check the fields",
+        icon: "info"
       });
     }
   };
@@ -164,6 +236,7 @@ export default function EditForm(data) {
             update={setUpdatedData}
             updatedData={updatedData}
             objKey={"name"}
+            emptyFields = {emptyFields}
           />
           <CategoryInputField
             label={"Category"}
@@ -171,6 +244,7 @@ export default function EditForm(data) {
             update={setUpdatedData}
             updatedData={updatedData}
             objKey={"category"}
+            emptyFields = {emptyFields}
           />
 
           <InputField
@@ -179,6 +253,7 @@ export default function EditForm(data) {
             update={setUpdatedData}
             updatedData={updatedData}
             objKey={"rate"}
+            emptyFields = {emptyFields}
           />
           <InputField
             label={"Address"}
@@ -186,6 +261,7 @@ export default function EditForm(data) {
             update={setUpdatedData}
             updatedData={updatedData}
             objKey={"address"}
+            emptyFields = {emptyFields}
           />
 
           <InputField
@@ -194,6 +270,7 @@ export default function EditForm(data) {
             update={setUpdatedData}
             updatedData={updatedData}
             objKey={"area"}
+            emptyFields = {emptyFields}
           />
           <InputField
             label={"Status"}
@@ -201,6 +278,7 @@ export default function EditForm(data) {
             update={setUpdatedData}
             updatedData={updatedData}
             objKey={"status"}
+            emptyFields = {emptyFields}
           />
 
           <InputField
@@ -209,6 +287,7 @@ export default function EditForm(data) {
             update={setUpdatedData}
             updatedData={updatedData}
             objKey={"furnishedStatus"}
+            emptyFields = {emptyFields}
           />
 
           <InputField
@@ -217,6 +296,7 @@ export default function EditForm(data) {
             update={setUpdatedData}
             updatedData={updatedData}
             objKey={"contactNumber"}
+            emptyFields = {emptyFields}
           />
         </div>
 
@@ -227,23 +307,33 @@ export default function EditForm(data) {
         />
 
         <ImageInputField
-        data={data.data?data.data.photos:""}
+          data={data.data ? data.data.photos : ""}
           setImageDeleted={data.setImageDeleted}
           update={setUpdatedData}
           updatedData={updatedData}
+          emptyFields = {emptyFields}
         />
-
-        <div
-          onClick={() => {
-            if (data.data) {
-              saveEdited();
-            } else {
-              saveAdded();
-            }
-          }}
-          className="cursor-pointer px-6 float-right mb-14 py-3 border-none rounded-full bg-[#000000] shadow-[#0000005f] shadow-md text-white text-sm text-center w-fit mt-14 font-bold"
-        >
-          SAVE
+        <div className="flex gap-5 float-right">
+          <div
+            onClick={() => {
+              handleDelete(true);
+            }}
+            className="cursor-pointer px-6 float-right mb-14 py-3 rounded-full hover:shadow-[#0000005f] border-red-400 border-2 transition-all duration-500 hover:shadow-md hover:bg-red-400 hover:text-white text-sm text-center w-fit mt-14 font-bold"
+          >
+            cancel
+          </div>
+          <div
+            onClick={() => {
+              if (data.data) {
+                saveEdited();
+              } else {
+                saveAdded();
+              }
+            }}
+            className="cursor-pointer px-6 float-right mb-14 py-3 border-none rounded-full bg-[#000000] hover:bg-white hover:text-black transition-all duration-500 shadow-[#0000005f] shadow-md text-white text-sm text-center w-fit mt-14 font-bold"
+          >
+            SAVE
+          </div>
         </div>
       </div>
     </div>

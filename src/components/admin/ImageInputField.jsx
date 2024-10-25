@@ -1,11 +1,11 @@
-import { faCircleXmark, faImage } from "@fortawesome/free-solid-svg-icons";
+import { faCircleExclamation, faCircleXmark, faImage } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react"
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
 
-export default function ImageInputField({data,setImageDeleted,update,updatedData}){
+export default function ImageInputField({data,setImageDeleted,update,updatedData,emptyFields}){
 
     const [imageArray,setImageArray]  = useState(data?data:[])
     const [imageFileArray,setImageFileArray] = useState(data?data:[])
@@ -67,6 +67,8 @@ export default function ImageInputField({data,setImageDeleted,update,updatedData
     // <div className="w-[90%] mx-auto md:flex mt-16 gap-5">
     <div>
   <div className="w-[90%] mt-16 justify-items-center grid grid-cols-4 mx-auto">
+  <div>
+  
   <label
     htmlFor="dropzone-file"
     className="added-image w-fit px-4 flex flex-col h-fit self-center bg-no-repeat bg-contain bg-center border-none rounded-xl bg-[#00000010] shadow-md cursor-pointer"
@@ -87,7 +89,13 @@ export default function ImageInputField({data,setImageDeleted,update,updatedData
             handleFileInputChange(e.target.files);
           }}
         />
-  </label>
+        </label>
+        {emptyFields.includes('photos') && imageArray.length==0?
+                 
+          <p className="text-red-400 font-thin text-xs mt-2"><FontAwesomeIcon icon={faCircleExclamation} /> This field is required</p>:null
+
+      }
+  </div>
 
   {imageArray.map((singleUrl,index)=>{
     return(

@@ -26,16 +26,25 @@ export default function EditModal({singleProperty,setIsClicked,isClicked}) {
 
   
   const handleClick = ()=>{
-    if(isClicked){
-        setIsClicked(false)
-    }else{
+    if(!isClicked){
+        // setIsClicked(false)
         setIsClicked(true)
+    }
+  }
+
+  const handleDelete = (flag)=>{
+    if(flag){
+      setIsClicked(false)
+    }else{
+      setIsClicked(true)
     }
   }
 
   return (
     <div>
-    <Dialog open={isClicked} onClose={handleClick} className="relative z-10">
+    <Dialog open={isClicked} onClose={()=>{
+      handleDelete(false)
+    }} className="relative z-10">
       <DialogBackdrop
         transition
         className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in"
@@ -47,7 +56,7 @@ export default function EditModal({singleProperty,setIsClicked,isClicked}) {
             transition
             className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95"
           >
-          <EditForm data={singleProperty} setImageDeleted={setImageDeleted} isClicked={isClicked} setIsClicked={setIsClicked} />
+          <EditForm data={singleProperty} setImageDeleted={setImageDeleted} isClicked={isClicked} setIsClicked={setIsClicked} handleDelete={handleDelete} />
           </DialogPanel>
         </div>
       </div>

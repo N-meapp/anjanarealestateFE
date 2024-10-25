@@ -11,7 +11,7 @@ import Youtube from './Youtube'
 export default function Admin(){
 
     const [tab,setTab] = useState('dashboard')
-
+    
     const controllTabs = (currentTab)=>{
         setTab(currentTab)
     }
