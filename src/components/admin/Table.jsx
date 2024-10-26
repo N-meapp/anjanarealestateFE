@@ -6,7 +6,6 @@ import { useState } from "react";
 export function Table({ properties,controlEdit,controlDelete}) {
   const [headArray, setHeadArray] = useState(Object.keys(properties[0]));
 
-  console.log('properties....',properties);
   return (
     <div className="scroll-container bg-white rounded-2xl">
     <Card className="h-full w-fit rounded-2xl">

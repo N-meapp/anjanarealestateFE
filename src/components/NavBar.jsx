@@ -160,7 +160,7 @@ const [isScrolled,setIsScrolled] = useState(false)
         color="blue-gray"
         className="flex items-center gap-x-2 p-1 font-medium"
       >
-        {/* <svg
+       <svg
           width="16"
           height="15"
           viewBox="0 0 16 15"

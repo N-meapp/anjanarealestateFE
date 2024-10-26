@@ -7,15 +7,14 @@ import { BASE_URL } from "../../Constats/Constats";
 import axios from "axios";
 
 function AdminProperty() {
-
-
-    console.log(BASE_URL,'baseurll...');
     
   const [table, setTable] = useState([]);
+  const [tableCopy,setTableCopy] = useState([])
   const [singleProperty, setSingleProperty] = useState();
   const [deleted, setDeleted] = useState(false);
   const [isEditClicked, setIsEditClicked] = useState(false);
   const [isAddClicked, setIsAddClicked] = useState(false);
+  const [isNoData,setIsNodData] = useState(false)
 
   const controlEdit = async (id) => {
     try {
@@ -29,6 +28,33 @@ function AdminProperty() {
       console.log(error);
     }
   };
+
+  const handleSearch = (value)=>{
+
+    setIsNodData(false)
+   
+    let flag = false
+
+    const key = value.trim()
+    if(key){
+      flag = true
+    }
+    const searchArray = []
+
+    for(let i=0;i<tableCopy.length;i++){
+      if(tableCopy[i].name.includes(key)){
+        searchArray.push(tableCopy[i])
+    }
+  }
+  if(searchArray.length>0){
+    setTable(searchArray)
+  }else if(flag){
+    setIsNodData(true)
+  }else{
+    setTable(tableCopy)
+  }
+
+  }
 
   const deleteConfirmed = async (id) => {
     try {
@@ -81,7 +107,6 @@ function AdminProperty() {
   };
 
   const fetchData = async () => {
-    console.log("fetchData called..");
 
     try {
 
@@ -89,6 +114,7 @@ function AdminProperty() {
       
 
       setTable(response.data.data);
+      setTableCopy(response.data.data);
     } catch (error) {
       console.log(error);
     }
@@ -102,7 +128,9 @@ function AdminProperty() {
     <div>
       <div className="w-full h-20 flex justify-around items-center">
         <div className="flex gap-2">
-          <input className="px-4 py-2 rounded-full bg-[#ffffff] shadow-lg"></input>
+          <input onChange={(e)=>{
+            handleSearch(e.target.value)
+          }} placeholder="search here..." className="px-4 py-2 rounded-full bg-[#ffffff] shadow-lg"></input>
           <button className="px-4 h-fit py-2 bg-[#0000002c] shadow-lg text-black text-sm font-bold rounded-full">
             search
           </button>
@@ -116,15 +144,31 @@ function AdminProperty() {
           ADD
         </button>
       </div>
-      <div className="p-5 w-full">
-        {table.length ? (
-          <Table
-            properties={table}
-            controlEdit={controlEdit}
-            controlDelete={controlDelete}
-          />
-        ) : null}
-      </div>
+     
+
+
+      {isNoData?
+        <div>
+        
+      <h1 className="font-bold text-2xl text-center text-[#7d7d7d] mt-40">No result found!</h1>
+        </div>:
+        
+<div className="p-5 w-full">
+{table.length ? (
+  <Table
+    properties={table}
+    controlEdit={controlEdit}
+    controlDelete={controlDelete}
+  />
+) : null}
+</div>
+        
+      }
+
+
+
+
+
       {isEditClicked ? (
         singleProperty.name ? (
           <EditModal
@@ -146,3 +190,4 @@ function AdminProperty() {
 }
 
 export default AdminProperty;
+

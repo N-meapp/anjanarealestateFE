@@ -45,7 +45,7 @@ export default function CountOfAssets() {
     }, [hasCounted]);
 
     return (
-        <>
+        <div>
         <div className="container mx-auto px-4">
          <h1 class="overflow-hidden pr-5 text-2xl font-bold text-[#26a69a]">#Happy clients</h1>
          <h1 class="overflow-hidden pr-5 text-5xl font-extrabold text-[#a4cbcb]">Push Your Visitors Into Happy Customers</h1>
@@ -69,6 +69,6 @@ export default function CountOfAssets() {
                 <h1 className="text-[#00000079] text-sm mt-3"># of Sold Properties</h1>
             </div>
         </div>
-        </>
+        </div>
     );
 }
