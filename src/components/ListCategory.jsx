@@ -152,7 +152,7 @@ export default function ListCategory() {
                             <div className="grid md:grid-cols-4 mt-4">
                                 {categoryListData.map((property) => {
                                     // Check if the property category matches the current category
-                                    if (category === property.category) {
+                                    if (category  === property.category) {
                                         return (
                                             <div className="">
                                             <PropertyCard
