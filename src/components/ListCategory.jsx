@@ -14,6 +14,7 @@ export default function ListCategory() {
        
     console.log(searchFechedData, "search  dataaaa")
     useEffect(() => {
+        
         getCategoryData();
     
     }, []);
@@ -118,24 +119,26 @@ export default function ListCategory() {
 {searchTerm ?
                 <div className="md:grid md:grid-cols-1 gap-10 px-3 md:px-10">
                  <div className="grid md:grid-cols-4 mt-4">
-                        {searchFechedData.map((property) => {
-                            // Check if the property category matches the current category
-                               
-                                 return (
-                                     <div className="">
-                                     <PropertyCard
-                                           key={property._id}
-                                           id={property._id}
-                                           img={property.photos[0]}
-                                           rate={property.rate}
-                                           area={property.area}
-                                           address={property.address}
-                                           status={property.status}
-                                           name={property.name}
-                                    />
-                                    </div>
-                                );
-                           })}
+                 {searchFechedData.length > 0 ? (
+                    searchFechedData.map((property) => (
+                      <div key={property._id} className="">
+                          <PropertyCard
+                            id={property._id}
+                            img={property.photos[0]}
+                            rate={property.rate}
+                            area={property.area}
+                            address={property.address}
+                            status={property.status}
+                            name={property.name}
+                          />
+                    </div>
+                  ))
+                ) : (
+                    <div className="absolute w-full text-center">
+                       <h1 className=" text-xl">Data not found!</h1>
+                    </div>
+                )}
+
                          </div>
                         </div>
                                 :

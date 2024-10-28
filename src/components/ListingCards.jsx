@@ -98,24 +98,25 @@ export default function ListingCards(){
         {searchTerm ?
                 <div className="md:grid grid-cols-1 gap-10 px-3 md:px-10">
                  <div className="md:grid lg:grid-cols-4 sm:grid-cols-2 mt-4">
-                        {searchFechedData.map((property) => {
-                            // Check if the property category matches the current category
-                               
-                                 return (
-                                     <div className="">
-                                     <PropertyCard
-                                           key={property._id}
-                                           id={property._id}
-                                           img={property.photos[0]}
-                                           rate={property.rate}
-                                           area={property.area}
-                                           address={property.address}
-                                           status={property.status}
-                                           name={property.name}
-                                    />
-                                    </div>
-                                );
-                           })}
+                 {searchFechedData.length > 0 ? (
+                    searchFechedData.map((property) => (
+                      <div key={property._id} className="">
+                          <PropertyCard
+                            id={property._id}
+                            img={property.photos[0]}
+                            rate={property.rate}
+                            area={property.area}
+                            address={property.address}
+                            status={property.status}
+                            name={property.name}
+                          />
+                    </div>
+                  ))
+                ) : (
+                    <div className="absolute w-full text-center">
+                       <h1 className="text-xl pb-6 font-bold text-zinc-300">Data not found!</h1>
+                    </div>
+                )}
                          </div>
                         </div>
                                 :
