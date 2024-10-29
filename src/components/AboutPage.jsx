@@ -9,7 +9,7 @@ export default function AboutPage() {
         <div>
             {/* <NavbarDefault /> */}
 
-           <div style={{"padding-top": "150px"}}>
+           <div className='mb-24'>
             <About />
            </div>
 

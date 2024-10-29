@@ -5,7 +5,7 @@ export default function Search({ handleSearchChange, searchTerm }){
 
     return(
 <div className="w-full">
-<div class={`md:w-[100%] w-[100%] justify-items-center z-10 bg-[#effdf5] mx-auto ${isPropertyPage? 'fixed md:pt-48 pt-40 md:pb-20 pb-10':'pt-20 md:pt-24 md:pb-10 pb-5'}`}>
+<div class={`md:w-[100%] w-[100%] justify-items-center z-10 bg-[#effdf5] mx-auto ${isPropertyPage? 'fixed md:pt-32 pt-32 md:pb-5 pb-4':'pt-20 md:pt-24 md:pb-10 pb-5'}`}>
 
   <div class="relative">
     <input

@@ -169,10 +169,12 @@ export function Table({ properties,controlEdit,controlDelete}) {
                     color="blue-gray"
                     className="font-medium"
                   >
-                    {
-                    //   property.features.map((feature)=>{
-                    //   <h1>{feature}</h1>
-                    // })
+                  {property.features?
+                    Object.entries(property.features).map(([key, value]) => (
+                      <div className="bg-[#9fbd9f3e] mb-1 rounded-full text-center px-1 py-1">
+                      <h1 className="">{value} {key}</h1>
+                      </div>
+                    )):<h className="text-red-500">no features</h>
                   }
                   </Typography>
                 </td>

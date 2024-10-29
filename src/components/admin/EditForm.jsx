@@ -126,7 +126,7 @@ return false;
         if (response.data.data && response.data.success) {
           Swal.fire({
             icon: "success",
-            title: "Your work has been saved",
+            title: "Saved succeccfully",
             showConfirmButton: false,
             timer: 1500,
           }).then(() => {
@@ -190,7 +190,7 @@ return false;
         if (response.data.data && response.data.success) {
           Swal.fire({
             icon: "success",
-            title: "Your work has been saved",
+            title: "Saved successfully",
             showConfirmButton: false,
             timer: 1500,
           }).then(() => {
