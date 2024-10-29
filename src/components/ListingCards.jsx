@@ -118,7 +118,7 @@ export default function ListingCards(){
                     </div>
                 )}
                          </div>
-                        </div>
+                         </div>
                                 :
         <div className="md:grid grid-cols-4 justify-items-center px-3 md:px-10">
 
