@@ -72,7 +72,7 @@ export default function EditForm(data) {
     if(outputArr.length==0){
       console.log('huuuuuuuuuu');
       
-      let regex = /^[a-zA-Z]+$/;
+      let regex = /[a-zA-Z]/;
       const rate = +updatedData.rate
       const contact = +updatedData.contactNumber
       console.log('ajaj',rate,contact);
@@ -126,7 +126,7 @@ return false;
         if (response.data.data && response.data.success) {
           Swal.fire({
             icon: "success",
-            title: "Your work has been saved",
+            title: "Saved succeccfully",
             showConfirmButton: false,
             timer: 1500,
           }).then(() => {
@@ -141,6 +141,8 @@ return false;
           });
         }
       } catch (error) {
+        console.log(error);
+        
         Swal.fire({
           icon: "warning",
           title: "something went wrong",
@@ -190,7 +192,7 @@ return false;
         if (response.data.data && response.data.success) {
           Swal.fire({
             icon: "success",
-            title: "Your work has been saved",
+            title: "Saved successfully",
             showConfirmButton: false,
             timer: 1500,
           }).then(() => {
@@ -205,6 +207,8 @@ return false;
           });
         }
       } catch (error) {
+        console.log(error);
+        
         Swal.fire({
           icon: "warning",
           title: "something went wrong",

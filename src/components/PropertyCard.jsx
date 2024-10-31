@@ -13,8 +13,8 @@ export default function PropertyCard(props){
     navigate(`/property-details/${props.id}`)
   } 
   class="relative flex flex-col my-6 bg-white property rounded-lg mx-3 shadow-xl hover:shadow-sm" >
-    <div class="relative overflow-hidden text-white rounded-t-md " >
-      <img src={props.img}  style={{width:'100%', height:'270px', objectFit: 'cover'}}/>
+    <div class="relative overflow-hidden text-white rounded-t-md bg-black" >
+      <img src={props.img} className="w-full h-[150px] md:h-[270px] object-contain"/>
     </div>
     <div class="p-4">
     
@@ -27,7 +27,7 @@ export default function PropertyCard(props){
     {props.area}
     </div>
     </div>
-    <div class="mb-4 font-bold py-0.5 px-2.5 border border-transparent text-xl text-[#000000] transition-all">
+    <div class="mb-4 font-bold py-0.5 px-2.5 border border-transparent text-xl text-[#000000] transition-all truncate">
     {props.name}
     </div>
       <p class="text-slate-600 leading-normal text-[#0000009f] font-light mb-4">

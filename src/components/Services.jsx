@@ -4,22 +4,24 @@ export default function Services(){
             <div className="features-icon w-full bg-[#effdf5] pt-10 md:pt-0 mb-10 pb-10 md:mb-0 ">
             <img className=" w-[20%] mt-8" src="/src/assets/ourproperties.png"></img>
             <h1 className="mt-5 font-bold text-lg text-[#055]">Our properties</h1>
-            <h1 className="mx-4 mt-3 text-[#0000007c]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, accusamus.</h1>
+            <h1 className="mx-4 mt-3 text-[#0000007c]">Explore our curated collection of stunning properties that cater to diverse lifestyles and budgets. Each listing is carefully selected to ensure you find your ideal home or investment.
+            </h1>
             </div>
             <div className="features-icon w-full bg-[#effdf5] pt-10 md:pt-0 mb-10 pb-10 md:mb-0 ">
             <img className=" w-[20%] mt-8" src="/src/assets/propertyforsale.png"></img>
-            <h1 className="mt-5 font-bold text-lg text-[#055]">Property For Sale</h1>
-            <h1 className="mx-4 mt-3 text-[#0000007c]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, accusamus.</h1>
+            <h1 className="mt-5 font-bold text-lg text-[#055]">Properties for Sale</h1>
+            <h1 className="mx-4 mt-3 text-[#0000007c]">Discover a wide range of properties for sale, from cozy apartments to luxurious estates. Our dynamic listings are updated regularly to ensure you have access to the latest opportunities.</h1>
             </div>
             <div className="features-icon w-full bg-[#effdf5] pt-10 md:pt-0 mb-10 pb-10 md:mb-0 ">
             <img className=" w-[20%] mt-8" src="/src/assets/realestateagent.png"></img>
             <h1 className="mt-5 font-bold text-lg text-[#055]">Real Estate Agent</h1>
-            <h1 className="mx-4 mt-3 text-[#0000007c]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, accusamus.</h1>
+            <h1 className="mx-4 mt-3 text-[#0000007c]">Our dedicated team of experienced real estate agents is here to provide personalized guidance and expert advice, ensuring a smooth and successful buying or selling experience.
+            </h1>
             </div>
             <div className="features-icon w-full bg-[#effdf5] pt-10 md:pt-0 mb-10 pb-10 md:mb-0">
             <img className=" w-[20%] mt-8" src="/src/assets/building.png"></img>
             <h1 className="mt-5 font-bold text-lg text-[#055]">House For Sale</h1>
-            <h1 className="mx-4 mt-3 text-[#0000007c]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, accusamus.</h1>
+            <h1 className="mx-4 mt-3 text-[#0000007c]">Searching for your dream house? Browse our extensive inventory of houses for sale, each offering unique features and prime locations to fit your needs. Let us help you find your perfect match!</h1>
             </div>
         </div>
     )

@@ -108,8 +108,8 @@ export default function ListCategory() {
         <div>
             {/* <NavbarDefault /> */}
             <Search searchTerm={searchTerm} handleSearchChange={getSearchData} />
-            <div className="md:pt-64 pt-48 pb-20">
-                <div className="md:ml-8 flex-ro text-center md:text-left ">
+            <div className="md:pt-52 pt-48 pb-20">
+                <div className="md:ml-8 flex-ro text-center md:text-left">
                     <h1 className="text-4xl font-bold mb-8 text-[#005555] leading-normal">Properties</h1>
                     <hr className="w-10" />
                 </div>
@@ -143,7 +143,7 @@ export default function ListCategory() {
                         </div>
                                 :
                        
-                <div className="md:grid grid-cols-1 gap-10 px-3 md:px-10">
+                <div className="md:grid grid-cols-1 gap-10 px-3 md:px-10 ">
                     {categoryData.map((category) => (
                         <div key={category} className="mb-10 w-full">
 
