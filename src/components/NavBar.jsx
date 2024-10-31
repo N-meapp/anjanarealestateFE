@@ -90,7 +90,6 @@ const [isScrolled,setIsScrolled] = useState(false)
         </a>
       </Typography>
       <Typography
-      
         as="li"
         variant="small"
         color="blue-gray"

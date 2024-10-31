@@ -9,7 +9,7 @@ export default function GalleryPage() {
     return (
         <div>
             {/* <NavbarDefault /> */}
-
+           
            <div className="gall-co">
            <Gallery />
            </div>

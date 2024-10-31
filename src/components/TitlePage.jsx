@@ -19,7 +19,8 @@ function TitlePage() {
   }
 
   return (
-    <div className="relative headersection md:grid md:grid-cols-2">
+    <div className="relative headersection md:grid md:grid-cols-2 h-[91vh]">
+
 <div className="bg-[#005555]">
       <div className="pt-24 h-autofont-bold content-center rounded-br-[1000px] bg-[#effdf5]">
         <div class="md:w-max md:ml-20 md:text-left text-center mt-10 md:mt-20">

@@ -89,6 +89,7 @@ export function ContactPage() {
         >
           We&apos;re Here to Help
         </Typography>
+
         <Typography className="mb-10 font-normal !text-lg lg:mb-10 mx-auto max-w-3xl !text-gray-500">
           Whether it&apos;s a question about our services, a request for
           technical assistance, or suggestions for improvement, our team is
@@ -106,7 +107,7 @@ export function ContactPage() {
           <div className="flex gap-4 mb-14">
             <FontAwesomeIcon icon={faPhone} className="h-10 text-[#005555]" />
             <div>
-            <h1 className="font-bold">+91 9965735888</h1>
+             <h1 className="font-bold">+91 9965735888</h1>
               <h1 className="text-[#608b7c71]">+9933442238</h1>
             </div>
           </div>

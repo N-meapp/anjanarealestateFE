@@ -4,15 +4,31 @@ import { useState } from "react";
 
 export default function ImageGallery({ imgArray }) {
   const [selectedImg, setSelectedImg] = useState(imgArray[0]);
+
+  const imageStyle = {
+    width: '100%',
+    height: '500px',
+    maxHeight: '500px',
+    objectFit: 'contain',
+};
+
+// Add media query styles
+const mediaQueryStyle = window.matchMedia('(max-width: 768px)').matches
+    ? { height: '300px', maxHeight: '300px' }
+    : {};
+
+const finalImageStyle = { ...imageStyle, ...mediaQueryStyle };
+
   return (
     <div>
       <div class="grid gap-2">
-        <div className="h-2/5 w-full rounded-2xl object-contain bg-black">
+      {/* h-2/5 w-full rounded-2xl object-contain bg-white */}
+        <div className="">
           <img
-            class="rounded-2xl object-center w-auto"
+            class="rounded-2xl object-center w-auto bg-white"
             src={selectedImg}
             alt=""
-            style={{width:'100%', height:'500px', objectFit: 'cover'}}
+            style={finalImageStyle}
           />
         </div>
         <div class="grid grid-cols-4 gap-2">
