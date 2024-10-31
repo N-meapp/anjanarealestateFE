@@ -23,7 +23,7 @@ export default function Features() {
     <div>
       <div className="pt-10 px-10 pb-10">
         <div className="md:flex gap-10">
-          <div className="features-icon md:hidden">
+          <div className="features-icon md:hidden">    
             <img
               className="w-[95%] rounded-xl"
               src="/src/assets/featuresBackground.jpg"
