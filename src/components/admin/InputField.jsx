@@ -15,16 +15,34 @@ export default function InputField({label,value,update,updatedData,objKey,type,e
 
     // },[])
 
-    const checkIsNumber =()=>{
-        let regex = /^[a-zA-Z]+$/;
+    const checkIsNumber =(x)=>{
+        let regex = /[a-zA-Z]/;
 
-        const testingNumb = regex.test(content)
+        const testingNumb = regex.test(x)
+        console.log(testingNumb,'testingngngn');
+        
         return testingNumb
     }
 
     const controlOnchange= (e)=>{
-        
 
+        const numberErr = document.getElementById('number-err')
+        const numberRateErr = document.getElementById('numberrate-err')
+        if(objKey=='contactNumber'){
+            if(checkIsNumber(e.target.value)){
+                numberRateErr.style.display = 'block'
+            }else{
+                numberRateErr.style.display = 'none'
+            }
+        }
+        if(objKey=='rate'){
+            if(checkIsNumber(e.target.value)){
+                numberErr.style.display = 'block'
+            }else{
+                numberErr.style.display = 'none'
+            }
+        }
+    
 
         const obj = {...updatedData}
         const key = objKey
@@ -34,6 +52,7 @@ export default function InputField({label,value,update,updatedData,objKey,type,e
         
         setContent(e.target.value)
             update(obj)
+
     }
 
     return(
@@ -49,9 +68,11 @@ export default function InputField({label,value,update,updatedData,objKey,type,e
 
         }
 
-        {objKey=='rate' || objKey=='contactNumber'?
-            checkIsNumber()?
-            <p className="text-red-400 font-thin text-xs mt-1"><FontAwesomeIcon icon={faCircleExclamation} /> number mathram mathida</p>:null:null
+        {objKey=='rate'?
+            <p id="number-err" className="text-red-400 font-thin text-xs mt-1 hidden"><FontAwesomeIcon icon={faCircleExclamation} />only numbers</p>:null
+        }
+        {objKey=='contactNumber'?
+            <p id="numberrate-err" className="text-red-400 font-thin text-xs mt-1 hidden"><FontAwesomeIcon icon={faCircleExclamation} />only numbers</p>:null
         }
         </div>
         </div>

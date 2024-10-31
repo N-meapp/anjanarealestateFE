@@ -73,7 +73,8 @@ export default function SingleProperty() {
         </div>
         <div className="w-full md:w-[60%] mb-96 mt-6 md:mt-0 rounded-xl">
           <div className="bg-[#ffffff] w-full py-6 rounded-xl grid md:grid-cols-5 grid-cols-3 text-center items-center shadow-xl mb-12 justify-around justify-items-center">
-            {Object.keys(singlePropertyData.features).map((key, index) => (
+            {singlePropertyData.features?
+              Object.keys(singlePropertyData.features).map((key, index) => (
               <div
                 className={`flex border-[black] w-full justify-center ${
                   index % 4 == 0 && index !== 0
@@ -90,7 +91,7 @@ export default function SingleProperty() {
                 </h1>
                 <h1 className=" text-[#858484] py-1 px-2 text-sm ">{key}</h1>
               </div>
-            ))}
+            )):<p>no features found!</p>}
           </div>
           <div className="w-full grid grid-cols-2 justify-center">
             <div className="justify-items-center">
