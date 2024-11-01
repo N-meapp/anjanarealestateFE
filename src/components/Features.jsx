@@ -37,7 +37,7 @@ export default function Features() {
                 </i>
               </div>
               <div className="content-center w-full h-auto">
-                <h1 className="font-bold text-[#005555] mb-3">2M Properties</h1>
+                <h1 className="font-bold text-[#e1b400] mb-3">2M Properties</h1>
                 <h1 className="">
                 Explore our impressive portfolio featuring a diverse range of properties that suit every lifestyle and investment goal.</h1>
               </div>
@@ -49,7 +49,7 @@ export default function Features() {
                 </i>
               </div>
               <div className="content-center w-full h-auto">
-                <h1 className="font-bold text-[#005555] mb-3">Happy customers</h1>
+                <h1 className="font-bold text-[#e1b400] mb-3">Happy customers</h1>
                 <h1 className="">
                 Our success is reflected in the smiles of our satisfied clients. We take pride in building lasting relationships and delivering exceptional service that transforms dreams into reality.
                 </h1>
@@ -61,7 +61,7 @@ export default function Features() {
                 <FontAwesomeIcon icon={faShieldHalved} />
               </div>
               <div className="content-center">
-                <h1 className="font-bold text-[#005555] mb-3">Legit Properties</h1>
+                <h1 className="font-bold text-[#e1b400] mb-3">Legit Properties</h1>
                 <h1 className="">
                 Rest assured that every property in our listings goes through a rigorous verification process. We prioritize transparency and integrity, ensuring you invest in properties you can trust.
                 </h1>

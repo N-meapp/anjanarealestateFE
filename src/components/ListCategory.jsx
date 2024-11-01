@@ -110,7 +110,7 @@ export default function ListCategory() {
             <Search searchTerm={searchTerm} handleSearchChange={getSearchData} />
             <div className="md:pt-52 pt-48 pb-20">
                 <div className="md:ml-8 flex-ro text-center md:text-left">
-                    <h1 className="text-4xl font-bold mb-8 text-[#005555] leading-normal">Properties</h1>
+                    <h1 className="text-4xl font-bold mb-8 text-[#e1b400] leading-normal">Properties</h1>
                     <hr className="w-10" />
                 </div>
 
@@ -118,7 +118,7 @@ export default function ListCategory() {
 
 {searchTerm ?
                 <div className="md:grid md:grid-cols-1 gap-10 px-3 md:px-10">
-                 <div className="grid md:grid-cols-4 mt-4">
+                 <div className="md:grid md:grid-cols-4 mt-4">
                  {searchFechedData.length > 0 ? (
                     searchFechedData.map((property) => (
                       <div key={property._id} className="">
@@ -147,12 +147,12 @@ export default function ListCategory() {
                     {categoryData.map((category) => (
                         <div key={category} className="mb-10 w-full">
 
-                             <h1 className="text-3xl font-bold mb-6 text-[#005555] text-center relative">
+                             <h1 className="text-3xl font-bold mb-6 text-[#e1b400] text-center relative">
                                  {category.charAt(0).toUpperCase() + category.slice(1)}
-                                 <div style={{ width: '200px' }} className="border-b-2 border-[#005555] absolute left-1/2 transform -translate-x-1/2 top-full"></div>
+                                 <div style={{ width: '200px' }} className="border-b-2 border-[#e1b400] absolute left-1/2 transform -translate-x-1/2 top-full"></div>
                              </h1>
 
-                            <div className="grid md:grid-cols-4 mt-4">
+                            <div className="md:grid md:grid-cols-4 mt-4">
                                 {categoryListData.map((property) => {
                                     // Check if the property category matches the current category
                                     if (category  === property.category) {

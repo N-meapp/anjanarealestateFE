@@ -92,7 +92,7 @@ export default function ListingCards(){
         <Search searchTerm={searchTerm} handleSearchChange={getSearchData} />
         <div className="md:pt-20 pt-10 pb-20">
         <div className="md:ml-8 text-center md:text-left ">
-        <h1 className="text-4xl font-bold mb-8 text-[#005555] leading-normal">Popular Properties</h1>
+        <h1 className="text-4xl font-bold mb-8 text-[#e1b400] leading-normal">Popular Properties</h1>
         <hr className="w-10"></hr>
         </div>
         {searchTerm ?
@@ -134,7 +134,7 @@ export default function ListingCards(){
 
 <div className="container mx-auto text-center">
     <a href="/all-category-list">
-  <button className="px-8 py-3 rounded-full mt-12 border-2 text-sm text-[#26a69a] font-bold border-[#26a69a] animate-bounce">
+  <button className="px-8 py-3 rounded-full mt-12 border-2 text-sm text-[#e1b400] font-bold border-[#e1b400] animate-bounce">
     Explore all properties {">>"}
   </button>
   </a>

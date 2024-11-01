@@ -78,14 +78,14 @@ export function ContactPage() {
         <Typography
           variant="h5"
           color="blue-gray"
-          className="mb-4 !text-base lg:!text-2xl text-[#00555569]"
+          className="mb-4 !text-base lg:!text-2xl text-[#e1b40069]"
         >
           contact us
         </Typography>
         <Typography
           variant="h1"
           color=""
-          className="mb-4 !text-3xl lg:!text-5xl text-[#005555]"
+          className="mb-4 !text-3xl lg:!text-5xl text-[#e1b400]"
         >
           We&apos;re Here to Help
         </Typography>
@@ -98,21 +98,21 @@ export function ContactPage() {
 
         <div className="mt-10 justify-items-center md:mt-20 md:flex md:justify-around">
           <div className="flex gap-4 mb-14">
-            <FontAwesomeIcon icon={faLocationDot} className="h-10 text-[#005555]" />
+            <FontAwesomeIcon icon={faLocationDot} className="h-10 text-[#e1b400]" />
             <div className="w-min">
               <h1 className="font-bold">Singarampalayam, Kinathukidavu</h1>
               <h1 className="text-[#608b7c71]">Tamilnadu</h1>
             </div>
           </div>
           <div className="flex gap-4 mb-14">
-            <FontAwesomeIcon icon={faPhone} className="h-10 text-[#005555]" />
+            <FontAwesomeIcon icon={faPhone} className="h-10 text-[#e1b400]" />
             <div>
              <h1 className="font-bold">+91 9965735888</h1>
               <h1 className="text-[#608b7c71]">+9933442238</h1>
             </div>
           </div>
           <div className="flex gap-4 mb-14">
-          <FontAwesomeIcon icon={faEnvelope} className="h-10 text-[#005555]" />
+          <FontAwesomeIcon icon={faEnvelope} className="h-10 text-[#e1b400]" />
           <div className="w-min">
           <h1 className="font-bold">anjanarealestate50@gmail.com</h1>
             <h1 className="text-[#608b7c71]">
@@ -247,7 +247,7 @@ export function ContactPage() {
             </div>
             {isContactClicked ? (
               <Button
-                className="w-full bg-[#effdf5] text-black border-black border-2"
+                className="w-full bg-[#faffe6] text-black border-black border-2"
                 color="gray"
               >
                 Sending...

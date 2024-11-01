@@ -4,7 +4,7 @@ import PrevArrow from "./Arrows/PrevArrow";
 
 export default function HomeCarousel({ prevClicked }) {
   return (
-    <div className="bg-[#005555] h-[500px] md:h-auto pt-20 md:pt-[150px]">
+    <div className="bg-[#e1b400] h-[500px] md:h-auto pt-20 md:pt-[150px]">
       <Carousel
         className="rounded-bl-[300px] rounded-tl-[100px]"
         transition={{ duration: 2 }}

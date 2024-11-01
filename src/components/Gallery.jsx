@@ -7,9 +7,9 @@ export default function Gallery() {
     return (
         <div>
 
-      <h1 className="text-5xl font-bold  text-[#005555] text-center relative mt-6 " style={{marginTop: '10px', marginBottom: '100px'}}>
+      <h1 className="text-5xl font-bold  text-[#e1b400] text-center relative mt-6 " style={{marginTop: '10px', marginBottom: '100px'}}>
             Our Gallery
-            <div style={{ width: '100px', marginTop: "10px" }} className="border-b-2 border-[#005555] absolute left-1/2 transform -translate-x-1/2 top-full"></div>
+            <div style={{ width: '100px', marginTop: "10px" }} className="border-b-2 border-[#e1b400] absolute left-1/2 transform -translate-x-1/2 top-full"></div>
         </h1>
           
           <div class="grid grid-cols-2 gap-4 md:grid-cols-4">

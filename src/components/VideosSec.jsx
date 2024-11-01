@@ -65,9 +65,9 @@ export default function Videos() {
 
   return (
     <div>
-       <h1 className="text-5xl font-bold  text-[#005555] text-center relative mt-10 " style={{marginTop: '100px', marginBottom: '100px'}}>
+       <h1 className="text-5xl font-bold  text-[#e1b400] text-center relative mt-10 " style={{marginTop: '100px', marginBottom: '100px'}}>
             Our videos
-            <div style={{ width: '100px', marginTop: "10px" }} className="border-b-2 border-[#005555] absolute left-1/2 transform -translate-x-1/2 top-full"></div>
+            <div style={{ width: '100px', marginTop: "10px" }} className="border-b-2 border-[#e1b400] absolute left-1/2 transform -translate-x-1/2 top-full"></div>
         </h1>
       {/*<!-- Component: Carousel with indicators & controls inside --> */}
       <div className="glide-03 relative w-full mt-16 mb-24">

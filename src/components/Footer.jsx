@@ -8,7 +8,7 @@ export default function Footer(){
 
     return(
 
- <footer class="relative bg-blueGray-200 pt-20 pb-14 bg-[#005555]">
+ <footer class="relative bg-blueGray-200 pt-20 pb-14 bg-[#e1b400]">
   <div class="container mx-auto px-4">
     <div class="flex flex-wrap text-left lg:text-left">
       <div class="w-full lg:w-6/12 px-4">
@@ -40,25 +40,25 @@ export default function Footer(){
             <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2 text-white">Useful Links</span>
             <ul class="list-unstyled">
               <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm text-[#ffffff86]" href="/">Home</a>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm text-[#ffffffba]" href="/">Home</a>
               </li>
               <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm text-[#ffffff86]" href="/all-category-list">Properties</a>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm text-[#ffffffba]" href="/all-category-list">Properties</a>
               </li>
               <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm text-[#ffffff86]" href="/about-page">About</a>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm text-[#ffffffba]" href="/about-page">About</a>
               </li>
               <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm text-[#ffffff86]" href="/gallery-page">Gallery</a>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm text-[#ffffffba]" href="/gallery-page">Gallery</a>
               </li>
               <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm text-[#ffffff86]" href="/contact-page">Contact us</a>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm text-[#ffffffba]" href="/contact-page">Contact us</a>
               </li>
             </ul>
           </div>
           <div class="w-full lg:w-4/12 px-4">
             <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2 text-white">Our Services</span>
-            <ul class="list-unstyled text-[#ffffff86]">
+            <ul class="list-unstyled text-[#ffffffba]">
               <li>
                 <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/terms?ref=njs-profile">Properties</a>
               </li>
@@ -75,9 +75,9 @@ export default function Footer(){
           </div>
           <div class="w-full lg:w-4/12 px-4">
             <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2 text-white">Contact</span>
-            <ul class="list-unstyled text-[#ffffff86]">
+            <ul class="list-unstyled text-[#ffffffba]">
               <li className="">
-                <a class="flex text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/terms?ref=njs-profile">anjanarealestates50@gmail.com</a>
+                <a class="flex text-blueGray-600 hover:text-blueGray-800 font-semibold pb-2 text-sm" href="https://creative-tim.com/terms?ref=njs-profile">anjanarealestates50@gmail.com</a>
               </li>
               <li>
                 <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/privacy?ref=njs-profile"><FontAwesomeIcon icon={faPhone} /> +91 99657 35888</a>
@@ -90,7 +90,7 @@ export default function Footer(){
     <hr class="my-6 border-blueGray-300"/>
     <div class="flex flex-wrap items-center md:justify-between justify-center">
       <div class="w-full md:w-4/12 px-4 mx-auto text-center">
-        <div class="text-sm text-teal-200 font-semibold py-1">
+        <div class="text-sm text-[#9c0b00] font-semibold py-1">
           Copyright © <span id="get-current-year">2024</span>
           <a href="#" class="text-blueGray-500 hover:text-gray-800" target="_blank"> Anjana Realestate</a>
           <a href="https://nmesmartech.com" class="text-blueGray-500 hover:text-gray-800" target="_blank">, <br/> Made by <span className="text-white">N-me Smartech</span></a>

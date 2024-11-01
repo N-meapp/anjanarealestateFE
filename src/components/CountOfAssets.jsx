@@ -47,8 +47,8 @@ export default function CountOfAssets() {
     return (
         <div>
         <div className="container mx-auto px-4">
-         <h1 class="overflow-hidden pr-5 text-2xl font-bold text-[#26a69a]">#Happy clients</h1>
-         <h1 class="overflow-hidden pr-5 text-5xl font-extrabold text-[#a4cbcb]">Push Your Visitors Into Happy Customers</h1>
+         <h1 class="overflow-hidden pr-5 text-2xl font-bold text-[#e1b400]">#Happy clients</h1>
+         <h1 class="overflow-hidden pr-5 text-5xl font-extrabold text-[#e5de85]">Push Your Visitors Into Happy Customers</h1>
          </div>
              <div id="scroll-div" className="md:flex gap-5 w-full justify-around mb-36 md:mt-36 mt-20 counter-div" >
 

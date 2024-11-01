@@ -10,7 +10,7 @@ import CountOfAssets from './CountOfAssets'
 export default function Home(){
     return(
         <div>
-        <div className='bg-[#005555]'>
+        <div className='bg-[#e1b400]'>
         <TitlePage />
         <About />
         </div>

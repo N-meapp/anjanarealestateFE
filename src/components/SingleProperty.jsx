@@ -51,7 +51,7 @@ export default function SingleProperty() {
     <div className="pt-28 md:pt-40 w-full h-auto md:px-12 px-4" style={{marginBottom:'100px'}}>
       <div className="w-full h-20 grid grid-cols-2 mb-10">   
       <div className="content-center w-max hidden md:block">
-      <h1 className="content-center px-4 text-white rounded-full py-2 bg-[#26a69a] font-bold md:font-extrabold text-xl md:text-2xl">
+      <h1 className="content-center px-4 text-white rounded-full py-2 bg-[#e1b400] font-bold md:font-extrabold text-xl md:text-2xl">
         ₹ {singlePropertyData.rate}
       </h1>
       </div>
@@ -62,7 +62,7 @@ export default function SingleProperty() {
           </h1>
         </div>
         <div className="content-center block md:hidden w-full">
-          <h1 className="content-center w-max float-right px-4 text-white rounded-full py-2 bg-[#26a69a] font-bold md:font-extrabold text-xl md:text-2xl">
+          <h1 className="content-center w-max float-right px-4 text-white rounded-full py-2 bg-[#e1b400] font-bold md:font-extrabold text-xl md:text-2xl">
             ₹ {singlePropertyData.rate}
           </h1>
         </div>
@@ -126,7 +126,7 @@ export default function SingleProperty() {
           <div className="justify-items-center">
               <h1 className="text-[#00000071]">contact</h1>
               <a href={`tel:${singlePropertyData.contactNumber}`}>
-              <button className="mb-12 py-2 px-6 mt-2 border-2 bg-[#005555] rounded-full flex gap-3">
+              <button className="mb-12 py-2 px-6 mt-2 border-2 bg-[#e1b400] rounded-full flex gap-3">
               <FontAwesomeIcon icon={faPhone} className="text-[#ffffffa8] self-center" />
               <h1 className="text-[#ffffff]">
               {singlePropertyData.contactNumber}

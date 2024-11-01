@@ -85,7 +85,7 @@ const [isScrolled,setIsScrolled] = useState(false)
         </svg> */}
  
         
-        <a href="/" className={`${location=='/'?'text-white rounded-full text-sm py-1 px-4 bg-[#005555]' : null} flex items-center transition-all `}>
+        <a href="/" className={`${location=='/'?'text-white rounded-full text-sm py-1 px-4 bg-[#e1b400]' : null} flex items-center transition-all `}>
           Home
         </a>
       </Typography>
@@ -108,7 +108,7 @@ const [isScrolled,setIsScrolled] = useState(false)
           />
         </svg> */}
        
-          <a href="/all-category-list"  className={`${location=='/all-category-list'?'text-white rounded-full text-sm py-1 px-4 bg-[#005555]' : null}  flex items-center transition-all `}>
+          <a href="/all-category-list"  className={`${location=='/all-category-list'?'text-white rounded-full text-sm py-1 px-4 bg-[#e1b400]' : null}  flex items-center transition-all `}>
              Properties
           </a>
 
@@ -134,7 +134,7 @@ const [isScrolled,setIsScrolled] = useState(false)
             fill="#90A4AE"
           />
         </svg> */}
-        <a href="/about-page" className={`${location=='/about-page'?'text-white rounded-full text-sm py-1 px-4 bg-[#005555] ' : null}  flex items-center transition-all `}>
+        <a href="/about-page" className={`${location=='/about-page'?'text-white rounded-full text-sm py-1 px-4 bg-[#e1b400] ' : null}  flex items-center transition-all `}>
           About
         </a>
       </Typography>
@@ -156,7 +156,7 @@ const [isScrolled,setIsScrolled] = useState(false)
             fill="#90A4AE"
           />
         </svg> */}
-        <a href="gallery-page" className={`${location=='/gallery-page'?'text-white rounded-full text-sm py-1 px-4 bg-[#005555] ' : null}  flex items-center transition-all `}>
+        <a href="gallery-page" className={`${location=='/gallery-page'?'text-white rounded-full text-sm py-1 px-4 bg-[#e1b400] ' : null}  flex items-center transition-all `}>
           Gallery
         </a>
       </Typography>
@@ -166,7 +166,7 @@ const [isScrolled,setIsScrolled] = useState(false)
         color="blue-gray"
         className="flex items-center gap-x-2 p-1 font-medium"
       >
-        <a href="contact-page" className={`${location=='/contact-page'?'text-white rounded-full text-sm py-1 px-4 bg-[#005555]' : null}  flex items-center transition-all `}>
+        <a href="contact-page" className={`${location=='/contact-page'?'text-white rounded-full text-sm py-1 px-4 bg-[#e1b400]' : null}  flex items-center transition-all `}>
           Contact
         </a>
       </Typography>
@@ -177,7 +177,7 @@ const [isScrolled,setIsScrolled] = useState(false)
         color="blue-gray"
         className="flex items-center gap-x-2 p-1 font-medium"
       >
-        <Button className="bg-teal-800" fullWidth variant="" size="sm" >
+        <Button className="bg-[#b2190d]" fullWidth variant="" size="sm" >
           <a href="tel:+91 99657 35888">
         <FontAwesomeIcon icon={faPhone} />
               <span> Call</span>
@@ -193,11 +193,11 @@ const [isScrolled,setIsScrolled] = useState(false)
     isScrolled
       ? "lg:mt-0 max-w-full lg:rounded-none"
       : "max-w-screen-xl lg:mt-8 lg:rounded-2xl"
-  } z-20 fixed left-0 right-0 mx-auto px-4 lg:px-8 rounded-none transition-all`}>
+  } z-20 fixed left-0 right-0 mx-auto px-4 lg:px-8 rounded-none transition-all py-0`}>
   <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
     <Typography as="a" href="#" className="mr-4 cursor-pointer font-medium">
     <a href="/">
-    <img className="w-[4rem]" src="/src/assets/logo.png"></img>
+    <img className="w-[6rem]" src="/src/assets/logo.png"></img>
     </a>
     </Typography>
     <div className="hidden lg:block">{navList}</div>
