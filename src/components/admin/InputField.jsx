@@ -35,13 +35,13 @@ export default function InputField({label,value,update,updatedData,objKey,type,e
                 numberRateErr.style.display = 'none'
             }
         }
-        if(objKey=='rate'){
-            if(checkIsNumber(e.target.value)){
-                numberErr.style.display = 'block'
-            }else{
-                numberErr.style.display = 'none'
-            }
-        }
+        // if(objKey=='rate'){
+        //     if(checkIsNumber(e.target.value)){
+        //         numberErr.style.display = 'block'
+        //     }else{
+        //         numberErr.style.display = 'none'
+        //     }
+        // }
     
 
         const obj = {...updatedData}

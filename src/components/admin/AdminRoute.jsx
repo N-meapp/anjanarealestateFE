@@ -8,9 +8,11 @@ export default function AdminRoute(){
 
     return(
         <div>
-        {user.username?
+        {
+        
+        user?user.username?
             <Admin />:
-            <Login />
+            <Login />:<Login />
         }
         </div>
     )

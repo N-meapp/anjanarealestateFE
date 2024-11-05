@@ -73,14 +73,14 @@ export default function EditForm(data) {
       console.log('huuuuuuuuuu');
       
       let regex = /[a-zA-Z]/;
-      const rate = +updatedData.rate
+      // const rate = +updatedData.rate
       const contact = +updatedData.contactNumber
-      console.log('ajaj',rate,contact);
-      const resultRate = regex.test(rate)
+      console.log('ajaj',contact);
+      // const resultRate = regex.test(rate)
       const resultContact = regex.test(contact)
-      console.log(resultRate,resultContact,'hummmmmm');
+      console.log(resultContact,'hummmmmm');
       
-      if(!resultRate && !resultContact){
+      if(!resultContact){
         return true
       }
       
@@ -99,8 +99,8 @@ return false;
     const result = handleValidation();
 
     if (result) {
-      const rate = updatedData.rate;
-      updatedData.rate = +rate;
+      // const rate = updatedData.rate;
+      // updatedData.rate = +rate;
       const contactNumber = updatedData.contactNumber;
       updatedData.contactNumber = +contactNumber;
 
@@ -165,8 +165,8 @@ return false;
     const result = handleValidation();
 
     if (result) {
-      const rate = updatedData.rate;
-      updatedData.rate = +rate;
+      // const rate = updatedData.rate;
+      // updatedData.rate = +rate;
       const contactNumber = updatedData.contactNumber;
 
       updatedData.contactNumber = +contactNumber;
