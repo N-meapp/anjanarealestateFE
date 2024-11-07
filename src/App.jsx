@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import {BrowserRouter,Route, Routes} from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
 import './App.css'
 import NavbarDefault from './components/NavBar'
 import SingleProperty from './components/SingleProperty'
@@ -11,43 +11,53 @@ import GalleryPage from './components/GalleryPage'
 import ContactPage from './components/ContactPage'
 import AdminRoute from './components/admin/AdminRoute'
 import ActionBtn from './components/ActionBtn'
-
-
+import Preloader from './components/Preloader' 
 
 function App() {
-
+  const [isLoading, setIsLoading] = useState(true)
   const location = window.location.href
   const isAdmin = location.includes('admin')
-  console.log(isAdmin,'sdfdf');
+
   
+  const currentPath = window.location.pathname
+  const isHomePage = currentPath === '/'
+
+  useEffect(() => {
+
+    if (isHomePage) {
+      const timer = setTimeout(() => setIsLoading(false), 2000)
+      return () => clearTimeout(timer) 
+    } else {
+      setIsLoading(false)
+    }
+  }, [isHomePage])
+
+
+  if (isLoading && isHomePage) {
+    return <Preloader />
+  }
 
   return (
     <div>
-   {!isAdmin?
-    <NavbarDefault />:null
-   }
-    <BrowserRouter>
-    <Routes>
-    <Route path='/admin' element={<AdminRoute />}/>
-      <Route path="/property-details/:p_id" element={<SingleProperty />}/>
-      <Route path="/all-category-list" element={<ListCategory />}/>
-      <Route path="/about-page" element={<AboutPage />}/>
-      <Route path="/gallery-page" element={<GalleryPage />}/>
-      <Route path="/contact-page" element={<ContactPage />}/>
-      <Route path="/" element={<Home />}>
-        </Route>
-      </Routes>
-    </BrowserRouter>
-    {!isAdmin?
-      <div>
-     <ActionBtn />
-    <Footer />
-      </div>:null
-    }
+      {!isAdmin && <NavbarDefault />}
+      <BrowserRouter>
+        <Routes>
+          <Route path='/admin' element={<AdminRoute />} />
+          <Route path="/property-details/:p_id" element={<SingleProperty />} />
+          <Route path="/all-category-list" element={<ListCategory />} />
+          <Route path="/about-page" element={<AboutPage />} />
+          <Route path="/gallery-page" element={<GalleryPage />} />
+          <Route path="/contact-page" element={<ContactPage />} />
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
+      {!isAdmin && (
+        <div>
+          <ActionBtn />
+          <Footer />
+        </div>
+      )}
     </div>
-
-
-
   )
 }
 
