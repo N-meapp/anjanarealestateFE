@@ -13,9 +13,10 @@ export default function FeaturesInputField({ data, update, updatedData }) {
   const handleAdd = () => {
     const tempObj = featuresObj;
 
-    if(key&&value){
+    if(key){
 
-      tempObj[key] = value;
+      const tempValue = value?value:'none'
+      tempObj[key] = tempValue;
   
       setFeaturesObj(tempObj);
   
@@ -101,7 +102,7 @@ export default function FeaturesInputField({ data, update, updatedData }) {
           {Object.entries(featuresObj).map(([key, value]) => (
             <div className="flex gap-1 mb-5">
               <div className="px-3 py-2 w-1/6 border-none h-10 text-center rounded-l-full bg-[#afaeae10] shadow-md text-blue-gray-700 font-sans text-sm font-bold">
-                {value}
+                {value=='none'?'':value}
               </div>
               <div className="px-3 py-2 w-full border-none h-10 rounded-r-full bg-[#afaeae10] shadow-md relative text-blue-gray-700 font-sans text-sm font-bold">
                 <FontAwesomeIcon

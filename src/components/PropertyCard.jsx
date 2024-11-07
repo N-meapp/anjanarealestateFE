@@ -19,18 +19,18 @@ export default function PropertyCard(props){
     <div class="p-4">
     
     <div className="flex justify-around">
-    <div class="mb-4 font-bold py-0.5 px-2.5 border border-transparent text-base text-[#000000] transition-all text-center">
+    <div class="mb-4 font-bold py-0.5 px-2.5 border border-transparent text-base text-[#000000] transition-all text-center truncate">
     ₹{props.rate}
     </div>
     <div className="text-2xl text-[#00000042]">|</div>
-    <div class="mb-4 font-bold py-0.5 px-2.5 border border-transparent text-base text-[#000000] transition-all text-center">
+    <div class="mb-4 font-bold py-0.5 px-2.5 border border-transparent text-base text-[#000000] transition-all text-center truncate">
     {props.area}
     </div>
     </div>
     <div class="mb-4 font-bold py-0.5 px-2.5 border border-transparent text-lg text-[#000000] transition-all truncate">
     {props.name}
     </div>
-      <p class="text-slate-600 leading-normal text-[#0000009f] text-sm font-light mb-3">
+      <p class="text-slate-600 leading-normal text-[#0000009f] text-sm font-light mb-3 truncate">
         {props.address}
       </p>
       

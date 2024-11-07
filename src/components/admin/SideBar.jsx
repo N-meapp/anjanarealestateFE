@@ -9,10 +9,11 @@ import {
   } from "@material-tailwind/react";
   import {
     PresentationChartBarIcon,
-    ShoppingBagIcon,
     InboxIcon,
     PowerIcon,
-    VideoCameraIcon
+    VideoCameraIcon,
+    RectangleGroupIcon,
+    TagIcon
   } from "@heroicons/react/24/solid";
 import { useDispatch } from "react-redux";
 import Swal from "sweetalert2";
@@ -90,7 +91,7 @@ import Swal from "sweetalert2";
             controllTabs('property')
           }}>
             <ListItemPrefix>
-              <ShoppingBagIcon className="h-5 w-5" />
+              <RectangleGroupIcon className="h-5 w-5" />
             </ListItemPrefix>
             Property
           </ListItem>
@@ -98,7 +99,7 @@ import Swal from "sweetalert2";
             controllTabs('category')
           }}>
             <ListItemPrefix>
-              <InboxIcon className="h-5 w-5" />
+              <TagIcon className="h-5 w-5" />
             </ListItemPrefix>
             Category
           </ListItem>

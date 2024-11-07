@@ -7,9 +7,9 @@ export function Table({ properties,controlEdit,controlDelete}) {
   const [headArray, setHeadArray] = useState(Object.keys(properties[0]));
 
   return (
-    <div className="scroll-container bg-white rounded-2xl">
+    <div className="scroll-container rounded-2xl">
     <Card className="h-full w-fit rounded-2xl">
-      <table className="table-auto text-left w-full rounded-2xl">
+      <table className="table-auto text-left w-full rounded-2xl bg-white">
         <thead>
           <tr>
             <th className="border-b border-blue-gray-100 bg-blue-gray-50 p-4">
@@ -101,6 +101,7 @@ export function Table({ properties,controlEdit,controlDelete}) {
               >
               </Typography>
             </th>
+        
           </tr>
         </thead>
         <tbody>
@@ -138,17 +139,10 @@ export function Table({ properties,controlEdit,controlDelete}) {
                   </Typography>
                 </td>
                 <td className={`${classes} bg-blue-gray-50/50`}>
-                  <Typography
-                    as="a"
-                    href="#"
-                    variant="small"
-                    color="blue-gray"
-                    className="font-medium"
-                  >
+                 
 
-                    <img src={property.photos[0]} alt="pics" />
+                    <img className=" w-[50px]" src={property.photos[0]} alt="pics" />
                     {/* {property.photos} */}
-                  </Typography>
                 </td>
                 <td className={classes}>
                   <Typography
@@ -212,6 +206,7 @@ export function Table({ properties,controlEdit,controlDelete}) {
                   </Typography>
                 </td>
                 <td className="p-4 flex gap-5 justify-end">
+                
                 <Typography onClick={()=>{
                   controlEdit(property._id)
                 }} as="a" href="#" variant="small" color="blue-gray" className="font-medium p-3 w-12 h-12 content-center text-center bg-[#00000015] rounded-full">

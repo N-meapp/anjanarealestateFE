@@ -35,13 +35,6 @@ export default function InputField({label,value,update,updatedData,objKey,type,e
                 numberRateErr.style.display = 'none'
             }
         }
-        // if(objKey=='rate'){
-        //     if(checkIsNumber(e.target.value)){
-        //         numberErr.style.display = 'block'
-        //     }else{
-        //         numberErr.style.display = 'none'
-        //     }
-        // }
     
 
         const obj = {...updatedData}
@@ -68,9 +61,6 @@ export default function InputField({label,value,update,updatedData,objKey,type,e
 
         }
 
-        {objKey=='rate'?
-            <p id="number-err" className="text-red-400 font-thin text-xs mt-1 hidden"><FontAwesomeIcon icon={faCircleExclamation} />only numbers</p>:null
-        }
         {objKey=='contactNumber'?
             <p id="numberrate-err" className="text-red-400 font-thin text-xs mt-1 hidden"><FontAwesomeIcon icon={faCircleExclamation} />only numbers</p>:null
         }

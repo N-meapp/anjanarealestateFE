@@ -49,15 +49,15 @@ export default function SingleProperty() {
   console.log(singlePropertyData, "data fetchhhhh");
   return (
     <div className="pt-28 md:pt-40 w-full h-auto md:px-12 px-4" style={{marginBottom:'100px'}}>
-      <div className="w-full h-20 grid grid-cols-2 mb-10">   
+      <div className="w-full h-20 grid md:grid-cols-2 mb-10 md:content-normal justify-center mt-5 md:mt-0">   
       <div className="content-center w-max hidden md:block">
       <h1 className="content-center px-4 text-white rounded-full py-2 bg-[#e1b400] font-bold md:font-extrabold text-xl md:text-2xl">
         ₹ {singlePropertyData.rate}
       </h1>
       </div>
 
-        <div className="content-center md:w-full w-[130%]">
-          <h1 className="md:text-xl text-base font-bold pb-5">
+        <div className="content-center md:w-full ">
+          <h1 className="md:text-3xl text-2xl font-bold pb-5">
             {singlePropertyData.name}
           </h1>
         </div>
@@ -78,7 +78,7 @@ export default function SingleProperty() {
               <div
                 className={`flex border-[black] w-full justify-center ${
                   index % 4 == 0 && index !== 0
-                    ? "md:border-none border-r"
+                    ? "md:border-none border-r" 
                     : index % 2 == 0 && index !== 0
                     ? "md:border-r"
                     : "border-r"
@@ -96,28 +96,28 @@ export default function SingleProperty() {
           <div className="w-full grid grid-cols-2 justify-center">
             <div className="justify-items-center">
               <h1 className="text-[#00000071]">Status</h1>
-              <h1 className="text-[black] font-bold mb-12">
+              <h1 className="text-[black] font-bold mb-12 text-center">
                 {singlePropertyData.status}
               </h1>
             </div>
 
             <div className="justify-items-center">
               <h1 className="text-[#00000071]">Area</h1>
-              <h1 className="text-[black] font-bold mb-12">
+              <h1 className="text-[black] font-bold mb-12 text-center">
                 {singlePropertyData.area}
               </h1>
             </div>
 
             <div className="justify-items-center">
               <h1 className="text-[#00000071]">Furnished Status</h1>
-              <h1 className="text-[black] font-bold mb-12">
+              <h1 className="text-[black] font-bold mb-12 text-center">
                 {singlePropertyData.furnishedStatus}
               </h1>
             </div>
 
             <div className="justify-items-center">
               <h1 className="text-[#00000071]">Address</h1>
-              <h1 className="text-[black] font-bold mb-12">
+              <h1 className="text-[black] font-bold mb-12 text-center">
                 {singlePropertyData.address}
               </h1>
             </div>

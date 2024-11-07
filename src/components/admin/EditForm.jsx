@@ -19,6 +19,8 @@ import { CategoryInputField } from "./CategoryInputField";
 export default function EditForm(data) {
   const { isClicked, setIsClicked, handleDelete } = data;
 
+  const [isSaveClicked,setIsSaveClicked] = useState(false)
+
   const [updatedData, setUpdatedData] = useState(data ? data.data : null);
 
   const [imageDeleted, setImageDeleted] = useState(false);
@@ -96,6 +98,7 @@ return false;
   };
 
   const saveEdited = async () => {
+    setIsSaveClicked(true)
     const result = handleValidation();
 
     if (result) {
@@ -159,9 +162,12 @@ return false;
         icon: "info"
       });
     }
+    setIsSaveClicked(false)
   };
 
   const saveAdded = async () => {
+    setIsSaveClicked(true)
+
     const result = handleValidation();
 
     if (result) {
@@ -197,6 +203,7 @@ return false;
             timer: 1500,
           }).then(() => {
             setIsClicked(false);
+            
           });
         } else {
           Swal.fire({
@@ -225,6 +232,8 @@ return false;
         icon: "info"
       });
     }
+
+    setIsSaveClicked(false)
   };
 
   return (
@@ -318,6 +327,7 @@ return false;
           emptyFields = {emptyFields}
         />
         <div className="flex gap-5 float-right">
+       
           <div
             onClick={() => {
               handleDelete(true);
@@ -328,18 +338,31 @@ return false;
           </div>
           <div
             onClick={() => {
+              if(!isSaveClicked){
               if (data.data) {
+                
                 saveEdited();
               } else {
                 saveAdded();
               }
+              }
             }}
-            className="cursor-pointer px-6 float-right mb-14 py-3 border-none rounded-full bg-[#000000] hover:bg-white hover:text-black transition-all duration-500 shadow-[#0000005f] shadow-md text-white text-sm text-center w-fit mt-14 font-bold"
+            className={`${isSaveClicked?'bg-white text-black':'bg-[#000000] text-white'} cursor-pointer px-6 float-right mb-14 py-3 border-none rounded-full hover:bg-white hover:text-black transition-all duration-500 shadow-[#0000005f] shadow-md  text-sm text-center w-fit mt-14 font-bold`}
           >
             SAVE
           </div>
+          {isSaveClicked?
+          <div className="flex absolute bottom-0 mb-6 right-0 mr-14 gap-2">
+      <h1 className="  text-sm text-green-400 font-bold">saving</h1>
+      <div className="rounded-full w-5 h-5 spinner spin">
+        <div className="w-4 h-4 bg-white rounded-full "></div>
+      </div>
+          </div>
+      :null
+      }
         </div>
       </div>
+      
     </div>
   );
 }

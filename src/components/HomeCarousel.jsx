@@ -16,7 +16,7 @@ export default function HomeCarousel({ prevClicked }) {
             color="white"
             size="lg"
             onClick={handlePrev}
-            className="!absolute top-2/4 left-4 -translate-y-2/4 bg-[#0e2e50] rounded-full"
+            className="!absolute top-2/4 left-4 -translate-y-2/4 bg-[#9a570099] rounded-full"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +42,7 @@ export default function HomeCarousel({ prevClicked }) {
             color="white"
             size="lg"
             onClick={handleNext}
-            className="!absolute top-2/4 !right-4 -translate-y-2/4  bg-[#18756c] rounded-full"
+            className="!absolute top-2/4 !right-4 -translate-y-2/4  bg-[#9a570099] rounded-full"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

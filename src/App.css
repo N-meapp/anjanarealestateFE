@@ -163,7 +163,7 @@ transition: all 0.5s;
 .scroll-container {
   max-height: 500px; /* or any height you need */
   overflow: scroll;
-  max-width:900px;
+  max-width:100%;
   -ms-overflow-style: none;  /* Hide scrollbar in IE and Edge */
   scrollbar-width: none;     /* Hide scrollbar in Firefox */
 }
@@ -245,4 +245,21 @@ transition: all 0.5s;
 .no-scrollbar {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+}
+
+
+
+.spinner {
+  background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0));
+
+}
+
+
+
+.spin {
+  animation: spin 1s infinite linear;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
