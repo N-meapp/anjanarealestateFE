@@ -4,8 +4,6 @@ import { useEffect, useState } from "react"
 
 export default function InputField({label,value,update,updatedData,objKey,type,emptyFields}){
 
-
-
     const [isNotNum,setIsNotNum] = useState(false)
     
     const [content,setContent] = useState(value)
@@ -38,7 +36,7 @@ export default function InputField({label,value,update,updatedData,objKey,type,e
     
 
         const obj = {...updatedData}
-        const key = objKey
+        const key = objKey0
         
         obj[key] = e.target.value
 

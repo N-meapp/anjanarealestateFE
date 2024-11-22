@@ -95,6 +95,7 @@ export default function ImageInputField({data,setImageDeleted,update,updatedData
           <p className="text-red-400 font-thin text-xs mt-2"><FontAwesomeIcon icon={faCircleExclamation} /> This field is required</p>:null
 
       }
+       <p className="text-gray-600 font-thin text-xs mt-2"> Max 5 images only allowed</p>
   </div>
 
   {imageArray.map((singleUrl,index)=>{

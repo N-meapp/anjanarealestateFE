@@ -66,7 +66,7 @@ export function Login() {
     <section className="grid text-center h-screen items-center p-8">
       <div>
       <div className="w-full webkit-center">
-      <img className="w-24 h-24 mb-4" src="../src/assets/logo.png"></img>
+      <img className="w-24 h-24 mb-4" src="/logo.png"></img>
       </div>
         <Typography variant="h3" color="blue-gray" className="mb-2">
           Sign In
