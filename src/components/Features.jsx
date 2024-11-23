@@ -26,7 +26,7 @@ export default function Features() {
           <div className="features-icon md:hidden">    
             <img
               className="w-[95%] rounded-xl"
-              src="/src/assets/featuresBackground.jpg"
+              src="/images/featuresBackground.jpg"
             ></img>
           </div>
           <div className="md:w-[50%] w-full md:text-left text-center h-auto">
@@ -71,7 +71,7 @@ export default function Features() {
           <div className="w-[50%] md:block hidden features-icon">
             <img
               className="w-[100%] rounded-xl"
-              src="/src/assets/featuresBackground.jpg"
+              src="/images/featuresBackground.jpg"
             ></img>
           </div>
         </div>

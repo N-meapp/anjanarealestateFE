@@ -18,7 +18,7 @@ body{
 
 
 .title-page1{
-    background-image: url(./assets/home3.jpg);
+    background-image: url(/images/home3.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -30,7 +30,7 @@ body{
 }
 
 .title-page2{
-    background-image: url(./assets/home4.jpg);
+    background-image: url(/images/home4.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -42,7 +42,7 @@ body{
 }
 
 .title-page3{
-    background-image: url(./assets/home5.jpg);
+    background-image: url(/images/home5.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -111,7 +111,7 @@ color: #e1b400
   content: "";
   width: 255px;
   height: 217px;
-  background-image: url(./assets/dots-yellow.svg);
+  background-image: url(/images/dots-yellow.svg);
   background-repeat: no-repeat;
   background-size: contain;
   -webkit-transform: translate(-40%, -40%);
