@@ -12,7 +12,6 @@ export default function ListCategory() {
     const [searchFechedData, setSearchFechedData] = useState([]);
     const [error,setError] = useState()
        
-    console.log(searchFechedData, "search  dataaaa")
     useEffect(() => {
         
         getCategoryData();
@@ -27,7 +26,6 @@ export default function ListCategory() {
         try {
             const response = await axios.get(`${BASE_URL}/admin/categoryList`);
 
-            console.log(response,'responnnnnnseeeee');
             
 
             if (response.data && response.data.data) {
@@ -73,20 +71,16 @@ export default function ListCategory() {
    
           const response = await axios.get(`${BASE_URL}/users/search`, { params: { query: searchKey } });
       
-          console.log('Response:', response);
       
           if (response.data && response.data.data && response.data.success !== false) {
             setSearchFechedData(response.data.data);
-            console.log(response.data.data, "Search fetched data");
           }else {
             
-            console.log('No data found or request unsuccessful.');
             setSearchFechedData([]); 
           }
 
 
           if (!searchKey || searchKey.trim() === '') {
-            console.log('Search term is empty after trimming.');
             setSearchFechedData([]);
             return;  // Stop further execution if the search term is empty
         }

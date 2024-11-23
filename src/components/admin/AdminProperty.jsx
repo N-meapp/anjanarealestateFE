@@ -21,7 +21,6 @@ function AdminProperty() {
       const response = await axios.get(`${BASE_URL}/users/singleProperty`, {
         params: { propertyId: id },
       });
-      console.log(response.data.data);
       setSingleProperty(response.data.data);
       setIsEditClicked(true);
     } catch (error) {
@@ -61,13 +60,11 @@ function AdminProperty() {
       const response = await axios.delete(
         `${BASE_URL}/admin/deleteProperty/${id}`
       );
-      console.log("dfdfddddd", response);
       setDeleted(true);
       if (response) {
         return true;
       }
     } catch (error) {
-      console.log(error);
 
       return false;
     }
@@ -87,7 +84,6 @@ function AdminProperty() {
       if (result.isConfirmed) {
         const status = await deleteConfirmed(id);
 
-        console.log(status, "statuss");
 
         if (status) {
           Swal.fire({

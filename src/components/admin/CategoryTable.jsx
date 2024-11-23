@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome,faUsers,faShieldHalved, faPenToSquare, faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
  
 export default function CategoryTable({categories,controlDelete}) {
-  console.log(categories,'categories....');
   
   return (
     <Card className="h-full ">

@@ -35,12 +35,9 @@ export function ContactPage() {
     if (name && email && message) {
       setIsContactClicked(true);
 
-      console.log("confirmed");
-
       try {
         const response = await axios.post(`${BASE_URL}/users/send-mail`, body);
 
-        console.log(response, "resssssss");
         if (response.data) {
           if (response.data.success) {
             Swal.fire({

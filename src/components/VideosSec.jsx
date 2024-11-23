@@ -6,7 +6,6 @@ import { BASE_URL } from "../Constats/Constats"
 export default function Videos() {
 
   const [videoLink, setVideoLink] = useState([]);
-  console.log(videoLink, "video link 555555555555");
 
 
   useEffect(()=>{
@@ -17,15 +16,12 @@ export default function Videos() {
   const getVideoLink = async () => {
     try {
       const response = await axios.get(`${BASE_URL}/admin/videoList`);
-      console.log(response.data.data, "video linksssss 222222");
 
       if(response.data.data) {
         setVideoLink(response.data.data); // Correct setter function
       } else {
-        console.log("Data not found");
       }
     } catch (error) {
-      console.log(error);
     }
   };
 

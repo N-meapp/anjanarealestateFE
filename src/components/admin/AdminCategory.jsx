@@ -8,7 +8,6 @@ export default function AdminCategory(){
 
     
     const BASE_URL = import.meta.env.VITE_BASE_URL;
-    console.log(BASE_URL);
 
     const [newcategory,setNewCategory] = useState()
     const [deleted,setDeleted] = useState()
@@ -23,7 +22,6 @@ export default function AdminCategory(){
         const response =await axios.post(`${BASE_URL}/admin/addCategory`,{categoryName:newcategory})
 
         if(response){
-          console.log(response);
           setIsAddClicked(false)
           setNewCategory('')
           
@@ -39,13 +37,11 @@ export default function AdminCategory(){
           const response = await axios.delete(
             `${BASE_URL}/admin/deleteCategory`,{params:{name:name}}
           );
-          console.log("dfdfddddd", response);
           setDeleted(true);
           if (response) {
             return true;
           }
         } catch (error) {
-          console.log(error);
     
           return false;
         }
@@ -65,7 +61,6 @@ export default function AdminCategory(){
           if (result.isConfirmed) {
             const status = await deleteConfirmed(name);
     
-            console.log(status, "statuss");
     
             if (status) {
               Swal.fire({
@@ -86,11 +81,9 @@ export default function AdminCategory(){
 
 
     const fetchData = async () => {
-        console.log('categoryy');
         
         try {
             const response = await axios.get(`${BASE_URL}/admin/categoryList`);
-            console.log(response.data.data);
             setTable(response.data.data);  
         } catch (error) {
             console.log(error); 

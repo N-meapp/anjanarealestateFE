@@ -15,10 +15,8 @@ export default function Youtube(){
     const getAllVideos =async()=>{
         try {
             const response = await axios.get(`${BASE_URL}/admin/videoList`);
-            console.log(response.data.data);
             setVideoArray(response.data.data);
         } catch (error) {
-            console.log(error); 
         }
     }
     
@@ -35,14 +33,12 @@ export default function Youtube(){
         const end = url.indexOf("?");
         const trimmedString = url.substring(start, end);
         
-        console.log(trimmedString);
 
         const body = {
             video: `https://youtube.com/embed/${trimmedString}`
         }
         try {
             const response = await axios.post(`${BASE_URL}/admin/add-video`,body);
-            console.log(response.data.data,'videoooooooooo');
             if(response.data.data){
                 Swal.fire({
                     position: "center",

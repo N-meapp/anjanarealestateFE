@@ -17,7 +17,6 @@ export default function InputField({label,value,update,updatedData,objKey,type,e
         let regex = /[a-zA-Z]/;
 
         const testingNumb = regex.test(x)
-        console.log(testingNumb,'testingngngn');
         
         return testingNumb
     }

@@ -15,7 +15,6 @@ export default function Dashboard(){
       const response = await axios.get(`${BASE_URL}/admin/getPropertyCount`);
 
       if (response.data && response.data.count) {
-        console.log(response.data,'dataaaaaaaa');
         setPropertyCount(response.data.count);
       } else {
         
@@ -33,7 +32,6 @@ export default function Dashboard(){
       const response = await axios.get(`${BASE_URL}/admin/categoryList`);
 
       if (response.data) {
-        console.log(response.data.data,'categoriiiiiieieeiei');
         
         setCategoryCount(response.data.data.length);
       } else {
@@ -53,7 +51,6 @@ export default function Dashboard(){
       const response = await axios.get(`${BASE_URL}/admin/getCategoryWiseCount`);
 
       if (response.data) {
-        console.log(response.data.data,'wissssseeeee');
         const category = []
         const count = []
         for(let i=0;i<response.data.data.length;i++){

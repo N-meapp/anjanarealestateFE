@@ -17,7 +17,6 @@ export default function SingleProperty() {
     getSingleProperty();
   }, []);
 
-  console.log(singlePropertyData, "propertiiiii");
 
   const getSingleProperty = async () => {
     try {
@@ -45,8 +44,6 @@ export default function SingleProperty() {
     return <div>Loading...</div>;
   }
 
-  console.log(singlePropertyData, "single dataaa");
-  console.log(singlePropertyData, "data fetchhhhh");
   return (
     <div className="pt-28 md:pt-40 w-full h-auto md:px-12 px-4" style={{marginBottom:'100px'}}>
       <div className="w-full h-20 grid md:grid-cols-2 mb-10 md:content-normal justify-center mt-5 md:mt-0">   

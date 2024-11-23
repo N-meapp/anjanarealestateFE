@@ -24,18 +24,15 @@ export default function ListingCards(){
     const homePropertyData = async () => {
         try {
 
-            console.log(BASE_URL,'baseurll.....');
             
 
         const response = await axios.get(`${BASE_URL}/users/PropertyList`)
 
-        console.log(response);
         
             
             
            
             if (response.data && response.data.data) {
-                console.log(response.data.data,',..jllojoij...');
                 
                 setHomeData(response.data.data);
             } else {
@@ -59,20 +56,16 @@ export default function ListingCards(){
    
           const response = await axios.get(`${BASE_URL}/users/search`, { params: { query: searchKey } });
       
-          console.log('Response:', response);
       
           if (response.data && response.data.data && response.data.success !== false) {
             setSearchFechedData(response.data.data);
-            console.log(response.data.data, "Search fetched data");
           }else {
             
-            console.log('No data found or request unsuccessful.');
             setSearchFechedData([]); 
           }
 
 
           if (!searchKey || searchKey.trim() === '') {
-            console.log('Search term is empty after trimming.');
             setSearchFechedData([]);
             return;  // Stop further execution if the search term is empty
         }

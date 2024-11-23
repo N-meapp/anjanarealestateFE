@@ -14,7 +14,6 @@ export default function NavbarDefault() {
 
   const location = window.location.pathname
 
-  console.log('location',location);
   
   // const [navLocation,setNavLocation] = useState(location)
 
@@ -22,7 +21,6 @@ export default function NavbarDefault() {
   useEffect(()=>{
     
     const baseUrl = import.meta.env.VITE_API_URL;
-    console.log(baseUrl,'kooooi');
 
   })
 

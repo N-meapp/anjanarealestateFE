@@ -5,7 +5,6 @@ import Swal from "sweetalert2";
 
 export default function SingleVideo({url,id,setIsApiCalled}){
 
-    console.log(url,'rullllll');
     
     const handleHover = (flag)=>{
         const card = document.getElementById(url)
@@ -37,7 +36,6 @@ export default function SingleVideo({url,id,setIsApiCalled}){
                 if (result.isConfirmed) {
                     const response =await axios.delete(`${BASE_URL}/admin/deleteVideo/${id}`)
                     if(response.data.success){
-                        console.log(response,'deletelelelele');
                         setIsApiCalled(true)
                         Swal.fire({
                             title: "Deleted!",
@@ -53,7 +51,6 @@ export default function SingleVideo({url,id,setIsApiCalled}){
 
 
            if(response){
-            console.log('successfully deleted');
             
            }
 
@@ -61,7 +58,6 @@ export default function SingleVideo({url,id,setIsApiCalled}){
         }
     }
 
-    console.log(url,'urlllll');
     
     return (
 

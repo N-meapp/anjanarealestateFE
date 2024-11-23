@@ -13,7 +13,6 @@ export default function DropDown({setCategory,category,SetIsCreateClicked}) {
         axios
         .get("http://127.0.0.1:8000/api/CategoryItemsList/")
         .then((response) => {
-          console.log("category...fetching.....", response.data);
           setItems(response.data);
         })
         .catch((error) => {
