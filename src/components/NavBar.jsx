@@ -217,7 +217,7 @@ const [isScrolled,setIsScrolled] = useState(false)
   <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
     <Typography as="a" href="#" className="mr-4 cursor-pointer font-medium">
     <a href="/">
-    <img className="w-[6rem]" src="./src/assets/logo.png"></img>
+    <img className="w-[6rem]" src="/src/assets/logo.png"></img>
     </a>
     </Typography>
     <div className="hidden lg:block">{navList}</div>

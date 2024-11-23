@@ -75,7 +75,7 @@ import Swal from "sweetalert2";
       <Card className="h-[calc(100vh-2rem)] w-full max-w-[15rem] p-4 shadow-xl mt-4 ml-4 shadow-blue-gray-900/5">
         <div className="mb-2 p-4 flex justify-around">
         <div className="w-full webkit-center">
-        <img className="w-24 h-24" src="../src/assets/logo.png"></img>
+        <img className="w-24 h-24" src="/src/assets/logo.png"></img>
         </div>
         </div>
         <List className="min-w-0">

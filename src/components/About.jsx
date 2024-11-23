@@ -14,7 +14,7 @@ export default function About(){
         </p>
         </div>
         <div className="md:w-[65%] md:p-0 p-14 about-img">
-        <img className="md:w-[65%]" src="./src/assets/about5.png"></img>
+        <img className="md:w-[65%]" src="/src/assets/about5.png"></img>
         </div>
         </div>
     )
