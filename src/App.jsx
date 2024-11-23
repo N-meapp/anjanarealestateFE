@@ -12,7 +12,7 @@ import ContactPage from './components/ContactPage'
 import AdminRoute from './components/admin/AdminRoute'
 import ActionBtn from './components/ActionBtn'
 import Preloader from './components/Preloader' 
-import BlogPage from './components/BlogPage'
+// import BlogPage from './components/BlogPage'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -49,7 +49,7 @@ function App() {
           <Route path="/all-category-list" element={<ListCategory />} />
           <Route path="/about-page" element={<AboutPage />} />
           <Route path="/gallery-page" element={<GalleryPage />} />
-          <Route path="/blog" element={<BlogPage />} />
+          {/* <Route path="/blog" element={<BlogPage />} /> */}
           <Route path="/contact-page" element={<ContactPage />} />
           <Route path="/" element={<Home />} />
         </Routes>

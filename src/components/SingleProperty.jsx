@@ -7,7 +7,7 @@ import { BASE_URL } from "../Constats/Constats";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
-export default function SingleProperty() {
+export default function     SingleProperty() {
   const [singlePropertyData, setSinglePropertyData] = useState(null); // Change to null for object
   const [error, setError] = useState(null);
 
