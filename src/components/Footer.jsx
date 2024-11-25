@@ -60,16 +60,16 @@ export default function Footer(){
             <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2 text-white">Our Services</span>
             <ul class="list-unstyled text-[#ffffffba]">
               <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/terms?ref=njs-profile">Properties</a>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="">Properties</a>
               </li>
               <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/privacy?ref=njs-profile">Property For Sale</a>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="">Property For Sale</a>
               </li>
               <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/contact-us?ref=njs-profile">Real Estate Agent</a>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="">Real Estate Agent</a>
               </li>
               <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/contact-us?ref=njs-profile">House For Sale</a>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="">House For Sale</a>
               </li>
             </ul>
           </div>
@@ -77,10 +77,10 @@ export default function Footer(){
             <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2 text-white">Contact</span>
             <ul class="list-unstyled text-[#ffffffba]">
               <li className="">
-                <a class="flex text-blueGray-600 hover:text-blueGray-800 font-semibold pb-2 text-sm" href="https://creative-tim.com/terms?ref=njs-profile">anjanarealestates50@gmail.com</a>
+                <a class="flex text-blueGray-600 hover:text-blueGray-800 font-semibold pb-2 text-sm" href="">anjanarealestates50@gmail.com</a>
               </li>
               <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/privacy?ref=njs-profile"><FontAwesomeIcon icon={faPhone} /> +91 99657 35888</a>
+                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href=""><FontAwesomeIcon icon={faPhone} /> +91 99657 35888</a>
               </li>
             </ul>
           </div>
