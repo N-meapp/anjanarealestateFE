@@ -41,6 +41,7 @@ export default function EditForm(data) {
   }, [imageDeleted]);
 
   const handleValidation = () => {
+    console.log(updatedData, "for validationssssss");
     const loopArr = [
       'address',
       'area',
@@ -61,20 +62,25 @@ export default function EditForm(data) {
   
         const res1 = loopArr[i] in updatedData
         const res2 = updatedData[loopArr[i]]
+        console.log('not validdddd...',loopArr[i]);
         if(!res1 || !res2){
           
           outputArr.push(loopArr[i])
         }
       }
+    console.log(outputArr,'outtttputttt');
     setEmptyFields(outputArr)
 
     if(outputArr.length==0){
+      console.log('huuuuuuuuuu');
       
       let regex = /[a-zA-Z]/;
       // const rate = +updatedData.rate
       const contact = +updatedData.contactNumber
+      console.log('ajaj',contact);
       // const resultRate = regex.test(rate)
       const resultContact = regex.test(contact)
+      console.log(resultContact,'hummmmmm');
       
       if(!resultContact){
         return true
@@ -84,6 +90,7 @@ export default function EditForm(data) {
     return false
     
     }else{
+      console.log('hahhhhhhhh');
 setEmptyFields(loopArr)
 return false;
     }
@@ -147,6 +154,7 @@ return false;
         });
       }
     }else{
+      console.log(result,'result.result..');
       
       Swal.fire({
         title: "Oops!",
@@ -216,6 +224,7 @@ return false;
         });
       }
     }else{
+      console.log(result,'resuuuuuu');
       
       Swal.fire({
         title: "Oops!",

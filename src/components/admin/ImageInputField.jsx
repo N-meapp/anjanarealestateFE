@@ -12,9 +12,11 @@ export default function ImageInputField({data,setImageDeleted,update,updatedData
     const [image,setImage] = useState('')
     const [imageUrl,setImageUrl] = useState('')
 
+    console.log(imageFileArray,'araaaaaaaaaay...');
     
 
     const handleFileInputChange=(value)=>{
+        console.log(value,'value....');
 
         const tempArray = imageArray
         const tempFile = imageFileArray
@@ -24,10 +26,12 @@ export default function ImageInputField({data,setImageDeleted,update,updatedData
 
 
         setImageUrl(url)
+        console.log('imageurl',imageUrl);
         tempArray.push(url)
         tempFile.push(image)
         setImageArray(tempArray)
         setImageFileArray(tempFile)
+        console.log(updatedData,'updated..data...');
         updatedData.photos = imageFileArray
         update(updatedData)
         
@@ -48,6 +52,7 @@ export default function ImageInputField({data,setImageDeleted,update,updatedData
         }
        }
        
+       console.log(tempFile,'temp....');
        
        setImageDeleted(true)
        setImageArray(tempArray)
@@ -90,7 +95,6 @@ export default function ImageInputField({data,setImageDeleted,update,updatedData
           <p className="text-red-400 font-thin text-xs mt-2"><FontAwesomeIcon icon={faCircleExclamation} /> This field is required</p>:null
 
       }
-       <p className="text-gray-600 font-thin text-xs mt-2"> Max 5 images only allowed</p>
   </div>
 
   {imageArray.map((singleUrl,index)=>{

@@ -14,6 +14,7 @@ import axios from "axios";
     const BASE_URL = import.meta.env.VITE_BASE_URL;
     const [updatedData,setUpdatedData] = useState()
 
+    console.log(updatedData,'updated....');
     
 
     const controlSave =async ()=>{
@@ -23,6 +24,7 @@ import axios from "axios";
         
         setTable(response.data.data);  
     } catch (error) {
+        console.log(error); 
     }
 
     }

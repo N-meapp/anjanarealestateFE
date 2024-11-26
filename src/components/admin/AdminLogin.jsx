@@ -29,6 +29,7 @@ export function Login() {
     try {
       const response = await axios.post(`${BASE_URL}/admin/adminLogin`,body);
 
+      console.log('response...',response);
       
       if (response.data.success) {
         Swal.fire({

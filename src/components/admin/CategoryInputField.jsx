@@ -11,9 +11,11 @@ export function CategoryInputField({label,value,update,updatedData,objKey,type,e
     const [category,setCategory] = useState(value)
 
     const fetchData = async () => {
+        console.log('categoryy');
         
         try {
             const response = await axios.get(`${BASE_URL}/admin/categoryList`);
+            console.log('category. array...',response.data.data);
             setCatArray(response.data.data)
         } catch (error) {
             console.log(error); 
@@ -26,6 +28,7 @@ export function CategoryInputField({label,value,update,updatedData,objKey,type,e
 
     const addCategory = (data)=>{
 
+        console.log(data,'datiiiii');
         
         setCategory(data)
         if(updatedData){

@@ -4,6 +4,8 @@ import { useEffect, useState } from "react"
 
 export default function InputField({label,value,update,updatedData,objKey,type,emptyFields}){
 
+
+
     const [isNotNum,setIsNotNum] = useState(false)
     
     const [content,setContent] = useState(value)
@@ -17,6 +19,7 @@ export default function InputField({label,value,update,updatedData,objKey,type,e
         let regex = /[a-zA-Z]/;
 
         const testingNumb = regex.test(x)
+        console.log(testingNumb,'testingngngn');
         
         return testingNumb
     }
@@ -35,7 +38,7 @@ export default function InputField({label,value,update,updatedData,objKey,type,e
     
 
         const obj = {...updatedData}
-        const key = objKey0
+        const key = objKey
         
         obj[key] = e.target.value
 

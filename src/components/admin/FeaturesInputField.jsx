@@ -6,6 +6,7 @@ import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 export default function FeaturesInputField({ data, update, updatedData }) {
   const [key, setKey] = useState();
   const [value, setValue] = useState();
+  console.log('feature data...',data);
   
   const [featuresObj, setFeaturesObj] = useState(data?data:{});
 
@@ -19,6 +20,7 @@ export default function FeaturesInputField({ data, update, updatedData }) {
   
       setFeaturesObj(tempObj);
   
+      console.log(updatedData,'updated dataa');
 
         if(updatedData){
           updatedData.features = tempObj;
@@ -45,14 +47,17 @@ export default function FeaturesInputField({ data, update, updatedData }) {
       // const tempObj = featuresArray
       
      setFeaturesObj(featuresObj)  
+     console.log(featuresObj);
 
      const temp = {}
      for (const [key, value] of Object.entries(featuresObj)) {
+      console.log(`${key}: ${value}`);
       if(key!=oldKey){
         temp[key] = value
       }
     }
         
+    console.log(temp);
     setFeaturesObj(temp)
 
     updatedData.features = temp;
