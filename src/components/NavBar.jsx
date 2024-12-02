@@ -158,7 +158,7 @@ const [isScrolled,setIsScrolled] = useState(false)
           Gallery
         </a>
       </Typography>
-      {/* <Typography
+      <Typography
         as="li"
         variant="small"
         color="blue-gray"
@@ -168,7 +168,7 @@ const [isScrolled,setIsScrolled] = useState(false)
         <a href="/blog" className={`${location=='/blog'?'text-white rounded-full text-sm py-1 px-4 bg-[#e1b400] ' : null}  flex items-center transition-all `}>
           Blog
         </a>
-      </Typography> */}
+      </Typography>
       <Typography
         as="li"
         variant="small"

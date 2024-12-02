@@ -13,7 +13,8 @@ import {
     PowerIcon,
     VideoCameraIcon,
     RectangleGroupIcon,
-    TagIcon
+    TagIcon,
+    MegaphoneIcon
   } from "@heroicons/react/24/solid";
 import { useDispatch } from "react-redux";
 import Swal from "sweetalert2";
@@ -102,6 +103,15 @@ import Swal from "sweetalert2";
               <TagIcon className="h-5 w-5" />
             </ListItemPrefix>
             Category
+          </ListItem>
+          <ListItem onClick={()=>{
+            controllTabs('blogs')
+          }}>
+            <ListItemPrefix>
+            
+              <MegaphoneIcon className="h-5 w-5" />
+            </ListItemPrefix>
+            Blog
           </ListItem>
           <ListItem onClick={()=>{
             controllTabs('youtube')

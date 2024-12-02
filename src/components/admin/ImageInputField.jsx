@@ -13,7 +13,6 @@ export default function ImageInputField({data,setImageDeleted,update,updatedData
     const [imageUrl,setImageUrl] = useState('')
 
     console.log(imageFileArray,'araaaaaaaaaay...');
-    
 
     const handleFileInputChange=(value)=>{
         console.log(value,'value....');

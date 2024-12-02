@@ -7,6 +7,7 @@ import Dashboard from './Dashboard'
 import AdminProperty from './AdminProperty'
 import AddProperty from './AddProperty'
 import Youtube from './Youtube'
+import AdminBlog from './adminBlog'
 
 export default function Admin(){
 
@@ -28,6 +29,8 @@ export default function Admin(){
             <AdminCategory />:
             tab=='youtube'?
             <Youtube />:
+            tab=='blogs'?
+            <AdminBlog />:
             null
         }
         </div>

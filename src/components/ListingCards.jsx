@@ -24,13 +24,7 @@ export default function ListingCards(){
     const homePropertyData = async () => {
         try {
 
-            
-
         const response = await axios.get(`${BASE_URL}/users/PropertyList`)
-
-        
-            
-            
            
             if (response.data && response.data.data) {
                 
