@@ -59,8 +59,9 @@ function AdminBlog() {
   }
 
   const deleteConfirmed = async (id) => {
+    console.log(id,'idddddd');
     try {
-      const response = await axios.delete(
+      const response = await axios.post(
         `${BASE_URL}/admin/delete-blog/${id}`
       );
       console.log("dfdfddddd", response);

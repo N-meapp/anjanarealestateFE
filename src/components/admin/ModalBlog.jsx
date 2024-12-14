@@ -57,11 +57,12 @@ export default function ModalBlog({singleProperty,setIsClicked,isClicked}) {
             transition
             className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95"
           >
+            
           <FormBlog data={singleProperty} setImageDeleted={setImageDeleted} isClicked={isClicked} setIsClicked={setIsClicked} handleDelete={handleDelete} />
           </DialogPanel>
         </div>
       </div>
-      </Dialog>
+      </Dialog> 
       <ToastContainer />
       </div>
   )

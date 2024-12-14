@@ -67,13 +67,13 @@ const BlogContent = () => {
             key={blog.id}
             className="relative flex flex-col md:flex-row w-full my-6 bg-white shadow-lg rounded-2xl"
           >
-            {/* <div className="relative p-2.5 md:w-2/5 shrink-0 overflow-hidden">
+            <div className="relative p-2.5 md:w-2/5 shrink-0 overflow-hidden">
               <img
                 src={blog.image || "default-image-url.jpg"}
                 alt={blog.title || "Blog Image"}
                 className="h-full w-full rounded-md md:rounded-lg object-cover"
               />
-            </div> */}
+            </div>
             <div className="p-6">
               <div className="mb-4 rounded-full bg-teal-600 py-0.5 px-2.5 border border-transparent text-xs text-white transition-all shadow-sm w-20 text-center">
                 {blog.category || "CATEGORY"}
