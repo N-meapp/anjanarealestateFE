@@ -61,7 +61,7 @@ const BlogContent = () => {
 
   return (
     <div className="pt-[200px] mb-[100px]">
-      <div className="grid grid-cols-2 gap-4 px-[150px]">
+      <div className="grid grid-col-1 md:grid-cols-2 gap-4 px-5 md:px-[150px]">
         {blogData.map((blog) => (
           <div
             key={blog.id}
